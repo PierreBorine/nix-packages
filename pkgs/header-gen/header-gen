@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+declare -A char_set
+char_set=(
+  [" _TOP"]="⠀" # Special whitespace characters
+  [" _BOT"]="⠀" # that don't get removed with xargs
+
+  # Alphabet
+  ["A_TOP"]="▄▀█" ["B_TOP"]="█▄▄" ["C_TOP"]="▄▀▀" ["D_TOP"]="█▀▄"
+  ["A_BOT"]="█▀█" ["B_BOT"]="█▄█" ["C_BOT"]="▀▄▄" ["D_BOT"]="█▄▀"
+
+  ["E_TOP"]="█▀▀" ["F_TOP"]="█▀▀" ["G_TOP"]="█▀▀" ["H_TOP"]="█░█"
+  ["E_BOT"]="██▄" ["F_BOT"]="█▀░" ["G_BOT"]="█▄█" ["H_BOT"]="█▀█"
+
+  ["I_TOP"]="▀█▀" ["J_TOP"]="░█" ["K_TOP"]="█▄▀" ["L_TOP"]="█░░"
+  ["I_BOT"]="▄█▄" ["J_BOT"]="▄▀" ["K_BOT"]="█░█" ["L_BOT"]="█▄▄"
+
+  ["M_TOP"]="█▀▄▀█" ["N_TOP"]="█▄░█" ["O_TOP"]="█▀█" ["P_TOP"]="█▀█"
+  ["M_BOT"]="█░▀░█" ["N_BOT"]="█░▀█" ["O_BOT"]="█▄█" ["P_BOT"]="█▀▀"
+
+  ["Q_TOP"]="█▀█░" ["R_TOP"]="█▀█" ["S_TOP"]="█▀" ["T_TOP"]="▀█▀"
+  ["Q_BOT"]="█▄▀▄" ["R_BOT"]="█▀▄" ["S_BOT"]="▄█" ["T_BOT"]="░█░"
+
+  ["U_TOP"]="█░█" ["V_TOP"]="█░█" ["W_TOP"]="█░█░█" ["X_TOP"]="▀▄▀"
+  ["U_BOT"]="█▄█" ["V_BOT"]="▀▄▀" ["W_BOT"]="▀▄▀▄▀" ["X_BOT"]="▄▀▄"
+
+  ["Y_TOP"]="▀▄▀" ["Z_TOP"]="▀▀▄"
+  ["Y_BOT"]="░█░" ["Z_BOT"]="▄█▄"
+
+  # Numericals
+  ["0_TOP"]="▄▀▄" ["1_TOP"]="▀█░" ["2_TOP"]="▀▀▄" ["3_TOP"]="▀█▄" ["4_TOP"]="█░█"
+  ["0_BOT"]="▀▄▀" ["1_BOT"]="▄█▄" ["2_BOT"]="▄█▄" ["3_BOT"]="▄▄▀" ["4_BOT"]="▀▀█"
+
+  ["5_TOP"]="██▀" ["6_TOP"]="█▀▀" ["7_TOP"]="▀▀█" ["8_TOP"]="███" ["9_TOP"]="███"
+  ["5_BOT"]="▄▄█" ["6_BOT"]="███" ["7_BOT"]="░█░" ["8_BOT"]="█▄█" ["9_BOT"]="▄▄█"
+
+  # Other Characters
+  ["!_TOP"]="█" [":_TOP"]="▀" [";_TOP"]="⠀▀" ["<_TOP"]="▄▀"
+  ["!_BOT"]="▄" [":_BOT"]="▀" [";_BOT"]="▄▀" ["<_BOT"]="⠀▀"
+
+  ["=_TOP"]="▀▀" [">_TOP"]="▀▄" ["._TOP"]="⠀" [",_TOP"]="⠀⠀"
+  ["=_BOT"]="▀▀" [">_BOT"]="▀⠀" ["._BOT"]="▀" [",_BOT"]="▄▀"
+
+  ["|_TOP"]="█" ["+_TOP"]="▄█▄" ["-_TOP"]="▄▄" ["__TOP"]="⠀⠀⠀"
+  ["|_BOT"]="█" ["+_BOT"]="⠀▀⠀" ["-_BOT"]="⠀⠀" ["__BOT"]="▄▄▄"
+
+  ["(_TOP"]="▄▀" [")_TOP"]="▀▄" ["[_TOP"]="█▀" ["]_TOP"]="▀█" ["{_TOP"]="░█" ["}_TOP"]="█░"
+  ["(_BOT"]="▀▄" [")_BOT"]="▄▀" ["[_BOT"]="█▄" ["]_BOT"]="▄█" ["{_BOT"]="▀▄" ["}_BOT"]="▄▀"
+
+  ["/_TOP"]="⠀▄▀" ["\_TOP"]="▀▄⠀"
+  ["/_BOT"]="▄▀⠀" ["\_BOT"]="⠀▀▄"
+)
+
+text=$(echo "$*" | tr '[:lower:]' '[:upper:]')
+for ((i=0; i<${#text}; i++)); do
+  char=${text:$i:1}
+
+  header_top+=" ${char_set[${char}_TOP]}"
+  header_bot+=" ${char_set[${char}_BOT]}"
+done
+
+printf '%s\n' "$header_top" | xargs
+printf '%s\n' "$header_bot" | xargs
