@@ -8,26 +8,6 @@
       url = "github:nadrad/h-m-m";
       flake = false;
     };
-    yazi-plugins = {
-      url = "github:yazi-rs/plugins";
-      flake = false;
-    };
-    yazi-ouch-src = {
-      url = "github:ndtoan96/ouch.yazi";
-      flake = false;
-    };
-    yazi-glow-src = {
-      url = "github:Reledia/glow.yazi";
-      flake = false;
-    };
-    yazi-hexyl-src = {
-      url = "github:Reledia/hexyl.yazi";
-      flake = false;
-    };
-    yazi-restore-src = {
-      url = "github:boydaihungst/restore.yazi";
-      flake = false;
-    };
   };
 
   outputs = {
