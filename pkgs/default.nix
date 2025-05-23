@@ -10,7 +10,6 @@ in {
     inherit (packages) dearpygui;
   };
   dearpygui = pkgs.python3Packages.callPackage ./dearpygui {};
-  dusage = callPackage ./dusage {};
   frankensteiner = callPackage ./frankensteiner {};
   glwall = callPackage ./glwall {};
   header-gen = callPackage ./header-gen {};
