@@ -6,6 +6,10 @@
 }: let
   inherit (pkgs) callPackage;
 in {
+  barotrauma-modding-tool = pkgs.python3Packages.callPackage ./barotrauma-modding-tool {
+    inherit (packages) dearpygui;
+  };
+  dearpygui = pkgs.python3Packages.callPackage ./dearpygui {};
   dusage = callPackage ./dusage {};
   frankensteiner = callPackage ./frankensteiner {};
   glwall = callPackage ./glwall {};
