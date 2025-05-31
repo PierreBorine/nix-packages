@@ -8,6 +8,11 @@
       url = "github:nadrad/h-m-m";
       flake = false;
     };
+
+    GLWall = {
+      url = "github:ikz87/GLWall";
+      flake = false;
+    };
   };
 
   outputs = {

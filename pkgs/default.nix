@@ -11,7 +11,7 @@ in {
   };
   dearpygui = pkgs.python3Packages.callPackage ./dearpygui {};
   frankensteiner = callPackage ./frankensteiner {};
-  glwall = callPackage ./glwall {};
+  glwall = callPackage ./glwall {inherit inputs;};
   header-gen = callPackage ./header-gen {};
   h-m-m = callPackage ./h-m-m {inherit inputs;};
   lutebot = callPackage ./lutebot {};
