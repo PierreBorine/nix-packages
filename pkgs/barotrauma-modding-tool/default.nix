@@ -9,6 +9,8 @@
   pyyaml,
   requests,
   pyperclip,
+  makeDesktopItem,
+  copyDesktopItems,
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "barotrauma-modding-tool";
@@ -21,7 +23,22 @@ stdenvNoCC.mkDerivation rec {
     hash = "sha256-6vPfNC3q3QUWiauxg0HmfNBRiIo35+wVgL3kkqyID40=";
   };
 
-  nativeBuildInputs = [pyinstaller];
+  desktopItems = [
+    (makeDesktopItem {
+      name = "Barotrauma Modding Tool";
+      desktopName = "Barotrauma Modding Tool";
+      genericName = "Mod utility for Barotrauma";
+      exec = pname;
+      icon = "barotrauma";
+      terminal = false;
+      categories = ["Application" "Game" "Utility"];
+    })
+  ];
+
+  nativeBuildInputs = [
+    copyDesktopItems
+    pyinstaller
+  ];
 
   buildInputs = [
     tkinter
@@ -41,6 +58,9 @@ stdenvNoCC.mkDerivation rec {
 
     install -Dm755 dist/main/main $out/bin/${pname}
     cp -r dist/main/_internal $out/bin
+
+    mkdir -p $out/share/icons/hicolor
+    cp -r ${./icons}/* $out/share/icons/hicolor
 
     runHook postInstall
   '';
