@@ -15,6 +15,7 @@ in {
   header-gen = callPackage ./header-gen {};
   h-m-m = callPackage ./h-m-m {inherit inputs;};
   lutebot = callPackage ./lutebot {};
+  qt6ct-kde = pkgs.kdePackages.callPackage ./qt6ct-kde {};
   termpicker = callPackage ./termpicker {};
   vgamepad = pkgs.python3Packages.callPackage ./vgamepad {};
 }

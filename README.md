@@ -37,5 +37,6 @@ Install packages
 | 🧠 <kbd><a href="https://github.com/nadrad/h-m-m"><b>h-m-m</b></a></kbd>                        | Hackers Mind Map, with a fix for Dash                       |
 | ❄️ <kbd><b>header-gen</b></kbd>                                                                 | Custom Bash script to generate fancy comment headers        |
 | 🎸 <kbd><a href="https://github.com/Dimencia/LuteBot3"><b>lutebot</b></a></kbd>                 | Windows program to help play music on Mordhau ([install guide](https://github.com/PierreBorine/nix-packages/tree/master/pkgs/lutebot/README.md))|
+| 🧠 <kbd><a href="https://github.com/ilya-fedin/qt6ct"><b>qt6ct-kde</b></a></kbd>                | Fork of qt6ct with KDE color-schemes support                |
 | 🖌️ <kbd><a href="https://github.com/ChausseBenjamin/termpicker"><b>termpicker</b></a></kbd>     | A color picker for the terminal                             |
 | 🎮 <kbd><a href="https://pypi.org/project/vgamepad"><b>vgamepad</b></a></kbd>                   | Virtual XBox360 and DualShock4 gamepads in python           |
