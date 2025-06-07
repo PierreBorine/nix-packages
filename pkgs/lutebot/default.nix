@@ -5,26 +5,28 @@
   protontricks,
   makeDesktopItem,
   copyDesktopItems,
-  imagemagick,
 }: let
+  name = "lutebot";
+  version = "3.6.5";
+
   lutebotExe =
     (fetchzip {
-      url = "https://github.com/Dimencia/LuteBot3/releases/download/v3.6.5/LuteBot.3.6.5.zip";
+      url = "https://github.com/Dimencia/LuteBot3/releases/download/v${version}/LuteBot.${version}.zip";
       hash = "sha256-u5PsqqVcpL+RiYn3eS0CU5l50lH1NKa0WKpkYajASy4=";
     })
     + "/bin/Release/net7.0-windows/LuteBot.exe";
 
-  name = "lutebot";
   script = writeShellScript name ''
     ${protontricks}/bin/protontricks -c "wine ${lutebotExe}" 629760
   '';
 in
   stdenvNoCC.mkDerivation {
-    inherit name;
+    pname = name;
+    inherit version;
 
-    src = ./mordhau.png;
+    src = script;
 
-    nativeBuildInputs = [copyDesktopItems imagemagick];
+    nativeBuildInputs = [copyDesktopItems];
 
     desktopItems = [
       (makeDesktopItem {
@@ -43,15 +45,11 @@ in
       runHook preInstall
 
       mkdir -p $out/bin
-      cp ${script} $out/bin/${name}
+      cp $src $out/bin/${name}
+
+      mkdir -p $out/share/icons/hicolor
+      cp -r ${./icons}/* $out/share/icons/hicolor
 
       runHook postInstall
-    '';
-
-    postInstall = ''
-      for i in 16 24 48 64 96 128; do
-        mkdir -p $out/share/icons/hicolor/''${i}x''${i}/apps
-        convert -background none -resize ''${i}x''${i} $src $out/share/icons/hicolor/''${i}x''${i}/apps/mordhau.png
-      done
     '';
   }

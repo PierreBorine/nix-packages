@@ -5,24 +5,26 @@
   protontricks,
   makeDesktopItem,
   copyDesktopItems,
-  imagemagick,
 }: let
+  name = "frankensteiner";
+  version = "1.4.1.0";
+
   frankensteinerExe = fetchurl {
-    url = "https://github.com/Dealman/Frankensteiner/releases/download/1.4.1.0/Frankensteiner.exe";
+    url = "https://github.com/Dealman/Frankensteiner/releases/download/${version}/Frankensteiner.exe";
     hash = "sha256-mU5aN2mfXGaGmDfbtG4DLmbIU1kPIyiXaSYwvHSuNhM=";
   };
 
-  name = "frankensteiner";
   script = writeShellScript name ''
     ${protontricks}/bin/protontricks -c "wine ${frankensteinerExe}" 629760
   '';
 in
-  stdenvNoCC.mkDerivation rec {
-    name = "frankensteiner";
+  stdenvNoCC.mkDerivation {
+    pname = name;
+    inherit version;
 
-    src = ./mordhau.png;
+    src = script;
 
-    nativeBuildInputs = [copyDesktopItems imagemagick];
+    nativeBuildInputs = [copyDesktopItems];
 
     desktopItems = [
       (makeDesktopItem {
@@ -41,15 +43,11 @@ in
       runHook preInstall
 
       mkdir -p $out/bin
-      cp ${script} $out/bin/${name}
+      cp $src $out/bin/${name}
+
+      mkdir -p $out/share/icons/hicolor
+      cp -r ${./icons}/* $out/share/icons/hicolor
 
       runHook postInstall
-    '';
-
-    postInstall = ''
-      for i in 16 24 48 64 96 128; do
-        mkdir -p $out/share/icons/hicolor/''${i}x''${i}/apps
-        convert -background none -resize ''${i}x''${i} $src $out/share/icons/hicolor/''${i}x''${i}/apps/mordhau.png
-      done
     '';
   }
