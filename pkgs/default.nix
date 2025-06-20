@@ -13,7 +13,6 @@ in {
   frankensteiner = callPackage ./frankensteiner {};
   glwall = callPackage ./glwall {inherit inputs;};
   header-gen = callPackage ./header-gen {};
-  h-m-m = callPackage ./h-m-m {inherit inputs;};
   lutebot = callPackage ./lutebot {};
   qt6ct-kde = pkgs.kdePackages.callPackage ./qt6ct-kde {};
   termpicker = callPackage ./termpicker {};

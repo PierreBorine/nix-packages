@@ -34,7 +34,6 @@ Install packages
 | 💾 <kbd><a href="https://github.com/mihaigalos/dusage"><b>dusage</b></a></kbd>                  | Command line disk usage information tool                    |
 | ⚗️ <kbd><a href="https://github.com/Dealman/Frankensteiner"><b>frankensteiner</b></a></kbd>     | Windows program to edit Mordhau mercenaries faces           |
 | 💫 <kbd><a href="https://github.com/ikz87/GLWall"><b>glwall</b></a></kbd>                       | Fragment shader renderer for live and responsive wallpapers |
-| 🧠 <kbd><a href="https://github.com/nadrad/h-m-m"><b>h-m-m</b></a></kbd>                        | Hackers Mind Map, with a fix for Dash                       |
 | ❄️ <kbd><b>header-gen</b></kbd>                                                                 | Custom Bash script to generate fancy comment headers        |
 | 🎸 <kbd><a href="https://github.com/Dimencia/LuteBot3"><b>lutebot</b></a></kbd>                 | Windows program to help play music on Mordhau ([install guide](https://github.com/PierreBorine/nix-packages/tree/master/pkgs/lutebot/README.md))|
 | 🧠 <kbd><a href="https://github.com/ilya-fedin/qt6ct"><b>qt6ct-kde</b></a></kbd>                | Fork of qt6ct with KDE color-schemes support                |

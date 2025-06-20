@@ -16,22 +16,6 @@
         "type": "github"
       }
     },
-    "h-m-m": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747413523,
-        "narHash": "sha256-v9f9rCcMGOJy1Ho07+nanV8v6zAewPNcJ1gCiX2DejI=",
-        "owner": "nadrad",
-        "repo": "h-m-m",
-        "rev": "25e23569f9cf91c3079368ff1156b5332a66defe",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nadrad",
-        "repo": "h-m-m",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1748460289,
@@ -51,7 +35,6 @@
     "root": {
       "inputs": {
         "GLWall": "GLWall",
-        "h-m-m": "h-m-m",
         "nixpkgs": "nixpkgs"
       }
     }
