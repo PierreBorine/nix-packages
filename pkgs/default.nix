@@ -11,6 +11,7 @@ in {
     inherit (packages) dearpygui;
   };
   dearpygui = pkgs.python3Packages.callPackage ./dearpygui {};
+  exabind = callPackage ./exabind {};
   frankensteiner = callPackage ./frankensteiner {};
   glwall = callPackage ./glwall {inherit inputs;};
   header-gen = callPackage ./header-gen {};
