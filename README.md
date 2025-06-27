@@ -29,6 +29,7 @@ Install packages
 ## Packages
 | Name                                                                                            | Description                                                 |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| 🖊️ <kbd><a href="https://www.dafont.com/asciid.font"><b>asciid</b></a></kbd>                    | A ascii themed font                                         |
 | 💧 <kbd><a href="https://github.com/themanyfaceddemon/Barotrauma_Modding_Tool"><b>barotrauma-modding-tool</b></a></kbd> | Mod utility for the game Barotrauma |
 | 🔧 <kbd><a href="https://github.com/hoffstadt/DearPyGui"><b>dearpygui</b></a></kbd>             | Graphical User Interface Toolkit for Python                 |
 | 💾 <kbd><a href="https://github.com/mihaigalos/dusage"><b>dusage</b></a></kbd>                  | Command line disk usage information tool                    |

@@ -6,6 +6,7 @@
 }: let
   inherit (pkgs) callPackage;
 in {
+  asciid = callPackage ./asciid {};
   barotrauma-modding-tool = pkgs.python3Packages.callPackage ./barotrauma-modding-tool {
     inherit (packages) dearpygui;
   };
