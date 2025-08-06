@@ -12,6 +12,7 @@ in {
   };
   dearpygui = pkgs.python3Packages.callPackage ./dearpygui {};
   exabind = callPackage ./exabind {};
+  ffmpegfs = callPackage ./ffmpegfs {};
   frankensteiner = callPackage ./frankensteiner {};
   glwall = callPackage ./glwall {inherit inputs;};
   header-gen = callPackage ./header-gen {};
