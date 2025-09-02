@@ -7,22 +7,26 @@
 
 buildDotnetModule rec {
   pname = "slsk-batchdl";
-  version = "2.4.7";
+  version = "2.5.0";
 
   src = fetchFromGitHub {
     owner = "fiso64";
     repo = "slsk-batchdl";
     rev = "v${version}";
-    sha256 = "sha256-P7V7YJUA1bkfp13Glb1Q+NJ7iTya/xgO1TM88z1Nddc=";
+    sha256 = "sha256-ZgNjNdk03jIc/REJMmuc5rZLbibLoy94DJxh7jAJY7g=";
   };
 
   projectFile = "slsk-batchdl/slsk-batchdl.csproj";
-  nugetDeps = ./nuget-deps.nix;
+
+  # nix build .#slsk-batchdl.fetch-deps
+  # ./result nuget-deps.json
+  nugetDeps = ./nuget-deps.json;
 
   dotnet-sdk = dotnetCorePackages.sdk_8_0;
   dotnet-runtime = dotnetCorePackages.runtime_8_0;
 
   # Patch the project file to use .NET 8
+  # https://github.com/fiso64/slsk-batchdl/issues/112
   postPatch = ''
     substituteInPlace slsk-batchdl/slsk-batchdl.csproj \
       --replace-fail "net6.0" "net8.0"
