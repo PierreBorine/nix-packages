@@ -5,16 +5,16 @@
 }:
 buildGoModule rec {
   pname = "termpicker";
-  version = "1.3.9";
+  version = "1.4.1";
 
   src = fetchFromGitHub {
     owner = "ChausseBenjamin";
     repo = "termpicker";
     rev = "v${version}";
-    hash = "sha256-51+H58wOSNTIGiZIe6ORgb4OilOVXIPms6/QESAd3dI=";
+    hash = "sha256-KLoI2NfolWdi4IXTa4s+n4eDLVtsmp8s1H8hSJqZvmw=";
   };
 
-  vendorHash = "sha256-otLMQ8Ay7tiMoHZ+yzbxNpOzvD2dCsqxOo9gweBUTb0=";
+  vendorHash = "sha256-M5YZaJdv9D8NkwD+T8tAtGH5P4IKcgjqpUoKVfLo+C0=";
 
   ldflags = [
     "-s"
