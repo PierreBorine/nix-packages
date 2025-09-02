@@ -18,10 +18,6 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
   in {
-    packages.${system} = import ./pkgs {
-      packages = self.packages.${system};
-      inherit (nixpkgs) lib;
-      inherit inputs pkgs;
-    };
+    packages.${system} = import ./pkgs {inherit inputs pkgs;};
   };
 }

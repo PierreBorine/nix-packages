@@ -1,14 +1,12 @@
 {
-  packages,
   inputs,
   pkgs,
-  lib,
 }: let
   inherit (pkgs) callPackage;
-in {
+in rec {
   asciid = callPackage ./asciid {};
   barotrauma-modding-tool = pkgs.python3Packages.callPackage ./barotrauma-modding-tool {
-    inherit (packages) dearpygui;
+    inherit dearpygui;
   };
   dearpygui = pkgs.python3Packages.callPackage ./dearpygui {};
   exabind = callPackage ./exabind {};
