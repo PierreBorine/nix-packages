@@ -8,6 +8,7 @@ in rec {
   barotrauma-modding-tool = pkgs.python3Packages.callPackage ./barotrauma-modding-tool {
     inherit dearpygui;
   };
+  barotrauma-save-decompressor = callPackage ./barotrauma-save-decompressor {};
   dearpygui = pkgs.python3Packages.callPackage ./dearpygui {};
   exabind = callPackage ./exabind {};
   ffmpegfs = callPackage ./ffmpegfs {};
