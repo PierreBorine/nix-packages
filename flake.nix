@@ -15,9 +15,17 @@
     nixpkgs,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {inherit system;};
+    systems = ["x86_64-linux"];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
-    packages.${system} = import ./pkgs {inherit inputs pkgs;};
+    packages = forAllSystems (
+      system: let
+        pkgs = import nixpkgs {inherit system;};
+      in
+        import ./pkgs {inherit inputs pkgs;}
+    );
+
+    lib.mkPackages = pkgs:
+      import ./pkgs {inherit inputs pkgs;};
   };
 }
