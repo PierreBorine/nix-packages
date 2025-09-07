@@ -22,10 +22,11 @@
       system: let
         pkgs = import nixpkgs {inherit system;};
       in
-        import ./pkgs {inherit inputs pkgs;}
+        self.lib.mkPackages pkgs
     );
 
     lib.mkPackages = pkgs:
-      import ./pkgs {inherit inputs pkgs;};
+      import ./pkgs {inherit inputs pkgs;}
+      // import ./builders {inherit pkgs;};
   };
 }
