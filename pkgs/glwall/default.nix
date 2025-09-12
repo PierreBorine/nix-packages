@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
   ];
 
   patchPhase = ''
-    sed -i "s/\/usr\/include\/stb/${lib.escape ["/"] (toString stb)}\/include\/stb/" Makefile
+    sed -i "s|/usr/include/stb|${toString stb}/include/stb|" Makefile
   '';
 
   installPhase = ''
