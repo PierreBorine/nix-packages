@@ -14,6 +14,7 @@ in rec {
   ffmpegfs = callPackage ./ffmpegfs {};
   frankensteiner = callPackage ./frankensteiner {};
   glwall = callPackage ./glwall {inherit inputs;};
+  h2mm-cli = callPackage ./h2mm-cli {};
   header-gen = callPackage ./header-gen {};
   lutebot = callPackage ./lutebot {};
   qt6ct-kde = pkgs.kdePackages.callPackage ./qt6ct-kde {};
