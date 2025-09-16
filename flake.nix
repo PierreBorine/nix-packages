@@ -20,7 +20,15 @@
   in {
     packages = forAllSystems (
       system: let
-        pkgs = import nixpkgs {inherit system;};
+        pkgs = import nixpkgs {
+          inherit system;
+          config = {
+            allowUnfreePredicate = pkg:
+              builtins.elem (nixpkgs.lib.getName pkg) [
+                "barotrauma-save-decompressor"
+              ];
+          };
+        };
       in
         self.lib.mkPackages pkgs
     );
