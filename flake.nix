@@ -8,6 +8,11 @@
       url = "github:ikz87/GLWall";
       flake = false;
     };
+
+    h2mm = {
+      url = "github:v4n00/h2mm-cli";
+      flake = false;
+    };
   };
 
   outputs = {

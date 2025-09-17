@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "h2mm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1758052161,
+        "narHash": "sha256-NA/dHiw2eIkyjzWfIsIzr8AoLPKikGyVRGQU9QJfsEc=",
+        "owner": "v4n00",
+        "repo": "h2mm-cli",
+        "rev": "c72ceb899ee333b579b7fafb8b28051b6e5e2faf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "v4n00",
+        "repo": "h2mm-cli",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1754214453,
@@ -35,6 +51,7 @@
     "root": {
       "inputs": {
         "GLWall": "GLWall",
+        "h2mm": "h2mm",
         "nixpkgs": "nixpkgs"
       }
     }
