@@ -19,11 +19,11 @@
     "h2mm": {
       "flake": false,
       "locked": {
-        "lastModified": 1758052161,
-        "narHash": "sha256-NA/dHiw2eIkyjzWfIsIzr8AoLPKikGyVRGQU9QJfsEc=",
+        "lastModified": 1758428458,
+        "narHash": "sha256-l4TZ2jD3SUP5+CklyrJuE+tljmDgLSqkhmaE+aOg9tw=",
         "owner": "v4n00",
         "repo": "h2mm-cli",
-        "rev": "c72ceb899ee333b579b7fafb8b28051b6e5e2faf",
+        "rev": "3bf4a5e54256fa340b55cc45c1f129ea1a647910",
         "type": "github"
       },
       "original": {
