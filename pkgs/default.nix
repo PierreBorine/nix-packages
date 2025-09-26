@@ -4,6 +4,7 @@
 }: let
   inherit (pkgs) callPackage;
 in rec {
+  apex-tux = callPackage ./apex-tux {inherit inputs;};
   asciid = callPackage ./asciid {};
   barotrauma-modding-tool = pkgs.python3Packages.callPackage ./barotrauma-modding-tool {
     inherit dearpygui;
