@@ -8,6 +8,12 @@
   pkg-config,
   dbus,
   libusb1,
+  withSysinfo ? true,
+  withHotkeys ? false, # X11 only
+  # https://github.com/not-jan/apex-tux/issues/69
+  withImage ? false, # broken
+  withSimulator ? false, # broken
+  withDbus ? true,
 }: let
   buildNightlyRustPackage =
     (makeRustPlatform {
@@ -32,14 +38,15 @@ in
       };
     };
 
-    buildFeatures = [
-      "dbus-support"
-      "usb"
+    buildFeatures =
+      lib.optional withSysinfo "sysinfo"
+      ++ lib.optional withHotkeys "hotkeys"
+      ++ lib.optional withImage "image"
+      ++ lib.optional withSimulator "simulator"
+      ++ lib.optional (!withDbus) "usb";
 
-      "sysinfo"
-      "hotkeys"
-      # "image" # broken
-    ];
+    cargoBuildFlags =
+      lib.optionalString (!withDbus) "--no-default-features";
 
     nativeBuildInputs = [
       pkg-config
