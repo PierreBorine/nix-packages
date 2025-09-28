@@ -1,9 +1,10 @@
-{ lib
-, rustPlatform
-, fetchFromGitHub
-, pkg-config
-, bzip2
-, zstd
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  pkg-config,
+  bzip2,
+  zstd,
 }:
 rustPlatform.buildRustPackage {
   pname = "exabind";
@@ -18,18 +19,14 @@ rustPlatform.buildRustPackage {
 
   cargoHash = "sha256-hMa67WcqqZAcN11LqXIoAP/Pjse8QjEuw2+6aJhz8xY=";
 
-  nativeBuildInputs = [
-    pkg-config
-  ];
+  nativeBuildInputs = [pkg-config];
 
   buildInputs = [
     bzip2
     zstd
   ];
 
-  env = {
-    ZSTD_SYS_USE_PKG_CONFIG = true;
-  };
+  env.ZSTD_SYS_USE_PKG_CONFIG = true;
 
   patchPhase = ''
     # Fix build issue

@@ -4,15 +4,12 @@
   fetchFromGitHub,
   cmake,
   setuptools-scm,
-
   xorg,
   libglvnd,
   libxcrypt,
-
   pillow,
   wheel,
 }:
-
 buildPythonPackage rec {
   pname = "dearpygui";
   version = "2.0.0";
@@ -36,19 +33,21 @@ buildPythonPackage rec {
     export MAKEFLAGS="''${MAKEFLAGS:+''${MAKEFLAGS} }-j$NIX_BUILD_CORES"
   '';
 
-  buildInputs = with xorg; [
-    libX11
-    libXcursor
-    libXi
-    libXinerama
-    libXrandr
-  ] ++ [
-    libglvnd
-    libxcrypt
-    wheel
-  ];
+  buildInputs = with xorg;
+    [
+      libX11
+      libXcursor
+      libXi
+      libXinerama
+      libXrandr
+    ]
+    ++ [
+      libglvnd
+      libxcrypt
+      wheel
+    ];
 
-  propagatedBuildInputs = [ pillow ];
+  propagatedBuildInputs = [pillow];
   doCheck = false;
 
   pythonImportsCheck = [

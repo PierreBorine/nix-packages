@@ -23,18 +23,6 @@ stdenvNoCC.mkDerivation rec {
     hash = "sha256-6vPfNC3q3QUWiauxg0HmfNBRiIo35+wVgL3kkqyID40=";
   };
 
-  desktopItems = [
-    (makeDesktopItem {
-      name = "Barotrauma Modding Tool";
-      desktopName = "Barotrauma Modding Tool";
-      genericName = "Mod utility for Barotrauma";
-      exec = pname;
-      icon = "barotrauma";
-      terminal = false;
-      categories = ["Application" "Game" "Utility"];
-    })
-  ];
-
   nativeBuildInputs = [
     copyDesktopItems
     pyinstaller
@@ -64,6 +52,18 @@ stdenvNoCC.mkDerivation rec {
 
     runHook postInstall
   '';
+
+  desktopItems = [
+    (makeDesktopItem {
+      name = "Barotrauma Modding Tool";
+      desktopName = "Barotrauma Modding Tool";
+      genericName = "Mod utility for Barotrauma";
+      exec = pname;
+      icon = "barotrauma";
+      terminal = false;
+      categories = ["Application" "Game" "Utility"];
+    })
+  ];
 
   meta = {
     description = "Barotrauma mod loader tool";
