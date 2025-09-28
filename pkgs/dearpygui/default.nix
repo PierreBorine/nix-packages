@@ -10,7 +10,7 @@
   pillow,
   wheel,
 }:
-buildPythonPackage (finalAttrs: {
+buildPythonPackage rec {
   pname = "dearpygui";
   version = "2.0.0";
   pyproject = true;
@@ -18,7 +18,7 @@ buildPythonPackage (finalAttrs: {
   src = fetchFromGitHub {
     owner = "hoffstadt";
     repo = "DearPyGui";
-    rev = "v${finalAttrs.version}";
+    rev = "v${version}";
     hash = "sha256-YkLco717xgNwzje53/xa/p1EJI3YO9E54Xkee8OXU2w=";
     fetchSubmodules = true;
   };
@@ -60,4 +60,4 @@ buildPythonPackage (finalAttrs: {
     homepage = "https://github.com/hoffstadt/DearPyGui";
     license = lib.licenses.mit;
   };
-})
+}
