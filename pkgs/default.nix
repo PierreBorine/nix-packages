@@ -14,7 +14,7 @@ in rec {
   exabind = callPackage ./exabind {};
   ffmpegfs = callPackage ./ffmpegfs {};
   frankensteiner = callPackage ./frankensteiner {};
-  glwall = callPackage ./glwall {inherit inputs;};
+  glwall = callPackage ./glwall {};
   h2mm-cli = callPackage ./h2mm-cli {inherit inputs;};
   header-gen = callPackage ./header-gen {};
   lutebot = callPackage ./lutebot {};

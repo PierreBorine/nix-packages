@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "GLWall": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1748496529,
-        "narHash": "sha256-NasKu7QbNq7vjDnhAeJWYlcI0n13hne4pUV1MomDcdk=",
-        "owner": "ikz87",
-        "repo": "GLWall",
-        "rev": "207283ad1f466f1f6df8b7d6e6f55bcb19607216",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ikz87",
-        "repo": "GLWall",
-        "type": "github"
-      }
-    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -71,7 +55,6 @@
     },
     "root": {
       "inputs": {
-        "GLWall": "GLWall",
         "fenix": "fenix",
         "h2mm": "h2mm",
         "nixpkgs": "nixpkgs"

@@ -1,17 +1,21 @@
 {
-  inputs,
+  fetchFromGitHub,
   stdenv,
   lib,
   stb,
   glfw,
   glew,
 }:
-# Waiting for https://github.com/NixOS/nixpkgs/pull/191826
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   name = "GLWall";
-  version = inputs.GLWall.rev;
+  version = "unstable-2025-05-29";
 
-  src = inputs.GLWall;
+  src = fetchFromGitHub {
+    owner = "ikz87";
+    repo = "GLWall";
+    rev = "207283ad1f466f1f6df8b7d6e6f55bcb19607216";
+    hash = "sha256-NasKu7QbNq7vjDnhAeJWYlcI0n13hne4pUV1MomDcdk=";
+  };
 
   nativeBuildInputs = [
     stb
@@ -20,18 +24,18 @@ stdenv.mkDerivation rec {
   ];
 
   patchPhase = ''
-    sed -i "s|/usr/include/stb|${toString stb}/include/stb|" Makefile
+    sed -i "s|/usr/include/stb|${stb}/include/stb|" Makefile
   '';
 
   installPhase = ''
     mkdir -p $out/bin
-    cp -r ${name} $out/bin/${name}
+    cp -r GLWall $out/bin/GLWall
   '';
 
-  meta = with lib; {
+  meta = {
     description = "GLSL fragment shader renderer meant to be used for live and responsive wallpapers";
     homepage = "https://github.com/ikz87/GLWall";
-    platforms = platforms.linux;
-    mainProgram = name;
+    platforms = lib.platforms.linux;
+    mainProgram = "GLWall";
   };
 }
