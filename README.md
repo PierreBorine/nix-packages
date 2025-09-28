@@ -8,21 +8,33 @@ My personal Nix packages repo.
 </div>
 
 > [!NOTE]
-> You can use these derivations as you wish, but I may not test or update them rigorously.
+> You can use this flake as you wish, but I may not test or update it rigorously.
 
 ## How to use
-Add it in your flake's inputs
+Add this flake to your's.
 ```Nix
-inputs = {
-  nix-packages.url = "github:PierreBorine/nix-packages";
-};
+{
+  inputs = {
+    nix-packages.url = "github:PierreBorine/nix-packages";
+  };
+}
 ```
-Install packages
+Install individual packages
 ```Nix
-{inputs, ...}: {
+{inputs, pkgs, ...}: {
   home.packages = [
-    inputs.nix-packages.packages.x86_64-linux.<package_name>
+    inputs.nix-packages.packages.${pkgs.system}.<package_name>
   ];
+}
+```
+or add them to a custom namespace of `pkgs` using an overlay
+```Nix
+{inputs, pkgs, ...}: {
+  nixpkgs.overlays = [
+    (_: prev: {my = inputs.nix-packages.lib.mkPackages prev;})
+  ];
+
+  environment.systemPackages = [pkgs.my.<package_name>];
 }
 ```
 
