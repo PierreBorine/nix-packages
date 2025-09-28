@@ -1,10 +1,10 @@
 {
   lib,
-  stdenv,
+  stdenvNoCC,
   bash,
   makeWrapper,
 }:
-stdenv.mkDerivation {
+stdenvNoCC.mkDerivation {
   name = "header-gen";
   src = ./header-gen;
   buildInputs = [bash];
