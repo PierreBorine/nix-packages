@@ -4,14 +4,14 @@
   fetchFromGitHub,
   dotnetCorePackages,
 }:
-buildDotnetModule rec {
+buildDotnetModule (finalAttrs: {
   pname = "slsk-batchdl";
   version = "2.5.0";
 
   src = fetchFromGitHub {
     owner = "fiso64";
     repo = "slsk-batchdl";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     sha256 = "sha256-ZgNjNdk03jIc/REJMmuc5rZLbibLoy94DJxh7jAJY7g=";
   };
 
@@ -39,4 +39,4 @@ buildDotnetModule rec {
     platforms = platforms.linux;
     mainProgram = "slsk-batchdl";
   };
-}
+})

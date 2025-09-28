@@ -12,14 +12,14 @@
   makeDesktopItem,
   copyDesktopItems,
 }:
-stdenvNoCC.mkDerivation rec {
+stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "barotrauma-modding-tool";
   version = "0.2.1";
 
   src = fetchFromGitHub {
     owner = "themanyfaceddemon";
     repo = "Barotrauma_Modding_Tool";
-    rev = version;
+    rev = finalAttrs.version;
     hash = "sha256-6vPfNC3q3QUWiauxg0HmfNBRiIo35+wVgL3kkqyID40=";
   };
 
@@ -44,7 +44,7 @@ stdenvNoCC.mkDerivation rec {
   installPhase = ''
     runHook preInstall
 
-    install -Dm755 dist/main/main $out/bin/${pname}
+    install -Dm755 dist/main/main $out/bin/barotrauma-modding-tool
     cp -r dist/main/_internal $out/bin
 
     mkdir -p $out/share/icons/hicolor
@@ -58,7 +58,7 @@ stdenvNoCC.mkDerivation rec {
       name = "Barotrauma Modding Tool";
       desktopName = "Barotrauma Modding Tool";
       genericName = "Mod utility for Barotrauma";
-      exec = pname;
+      exec = "barotrauma-modding-tool";
       icon = "barotrauma";
       terminal = false;
       categories = ["Application" "Game" "Utility"];
@@ -69,7 +69,7 @@ stdenvNoCC.mkDerivation rec {
     description = "Barotrauma mod loader tool";
     homepage = "https://github.com/themanyfaceddemon/Barotrauma_Modding_Tool";
     license = lib.licenses.gpl3Only;
-    mainProgram = pname;
+    mainProgram = "barotrauma-modding-tool";
     platforms = lib.platforms.all;
   };
-}
+})

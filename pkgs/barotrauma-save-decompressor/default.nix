@@ -4,14 +4,14 @@
   fetchFromGitHub,
   dotnetCorePackages,
 }:
-buildDotnetModule rec {
+buildDotnetModule (finalAttrs: {
   pname = "barotrauma-save-decompressor";
   version = "1.5.0.0";
 
   src = fetchFromGitHub {
     owner = "Jlobblet";
     repo = "Barotrauma-Save-Decompressor";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     hash = "sha256-CkHaD3LZaOhohYRVJsGI48WdhcX3ww5mYr3/7XSTa14=";
   };
 
@@ -21,10 +21,10 @@ buildDotnetModule rec {
   nugetDeps = ./nuget-deps.json;
 
   postPatch = ''
-    substituteInPlace ${projectFile} \
+    substituteInPlace ${finalAttrs.projectFile} \
       --replace-warn '<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>' "" \
       --replace-fail "net6.0" "net8.0" \
-      --replace-fail "</PropertyGroup>" "<AssemblyName>${meta.mainProgram}</AssemblyName></PropertyGroup>"
+      --replace-fail "</PropertyGroup>" "<AssemblyName>barotrauma-save-decompressor</AssemblyName></PropertyGroup>"
   '';
 
   meta = {
@@ -34,4 +34,4 @@ buildDotnetModule rec {
     mainProgram = "barotrauma-save-decompressor";
     platforms = lib.platforms.all;
   };
-}
+})

@@ -16,9 +16,9 @@
   inherit (lib.strings) removeSuffix makeBinPath;
   inherit (builtins) readFile;
 in
-  stdenvNoCC.mkDerivation rec {
+  stdenvNoCC.mkDerivation {
     pname = "h2mm-cli";
-    version = removeSuffix "\n" (readFile "${src}/version");
+    version = removeSuffix "\n" (readFile "${inputs.h2mm}/version");
 
     src = inputs.h2mm;
 

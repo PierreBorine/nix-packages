@@ -20,7 +20,7 @@
       inherit (inputs.fenix.packages.${stdenv.system}.minimal) cargo rustc;
     }).buildRustPackage;
 in
-  buildNightlyRustPackage rec {
+  buildNightlyRustPackage (finalAttrs: {
     pname = "apex-tux";
     version = "unstable-2025-08-03";
 
@@ -62,11 +62,11 @@ in
       ln -s ${./Cargo.lock} Cargo.lock
     '';
 
-    LD_LIBRARY_PATH = lib.makeLibraryPath buildInputs;
+    env.LD_LIBRARY_PATH = lib.makeLibraryPath finalAttrs.buildInputs;
 
     postFixup = ''
       wrapProgram $out/bin/apex-tux \
-        --prefix LD_LIBRARY_PATH : ${LD_LIBRARY_PATH}
+        --prefix LD_LIBRARY_PATH : ${finalAttrs.env.LD_LIBRARY_PATH}
     '';
 
     meta = {
@@ -75,4 +75,4 @@ in
       license = lib.licenses.unlicense;
       mainProgram = "apex-tux";
     };
-  }
+  })

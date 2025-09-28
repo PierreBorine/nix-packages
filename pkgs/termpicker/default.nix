@@ -3,14 +3,14 @@
   buildGoModule,
   fetchFromGitHub,
 }:
-buildGoModule rec {
+buildGoModule (finalAttrs: {
   pname = "termpicker";
   version = "1.4.1";
 
   src = fetchFromGitHub {
     owner = "ChausseBenjamin";
     repo = "termpicker";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     hash = "sha256-KLoI2NfolWdi4IXTa4s+n4eDLVtsmp8s1H8hSJqZvmw=";
   };
 
@@ -19,7 +19,7 @@ buildGoModule rec {
   ldflags = [
     "-s"
     "-w"
-    "-X=main.version=${version}"
+    "-X=main.version=${finalAttrs.version}"
   ];
 
   meta = {
@@ -28,4 +28,4 @@ buildGoModule rec {
     license = lib.licenses.beerware;
     mainProgram = "termpicker";
   };
-}
+})
