@@ -45,5 +45,7 @@
     lib.mkPackages = pkgs:
       import ./pkgs {inherit inputs pkgs;}
       // import ./builders {inherit pkgs;};
+
+    nixosModules = import ./pkgs/nixos.nix self;
   };
 }
