@@ -29,6 +29,7 @@ Install packages
 ## Packages
 | Name                                                                                            | Description                                                 |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| ⌨️ <kbd><a href="https://github.com/not-jan/apex-tux"><b>apex-tux</b></a></kbd>                 | Use the OLED screen on Steelseries Apex keyboards           |
 | 🖊️ <kbd><a href="https://www.dafont.com/asciid.font"><b>asciid</b></a></kbd>                    | A ascii themed font                                         |
 | 💧 <kbd><a href="https://github.com/themanyfaceddemon/Barotrauma_Modding_Tool"><b>barotrauma-modding-tool</b></a></kbd> | Mod utility for the game Barotrauma |
 | 💧 <kbd><a href="https://github.com/Jlobblet/Barotrauma-Save-Decompressor"><b>barotrauma-save-decompressor</b></a></kbd>| Decompress Barotrauma saves         |
@@ -44,3 +45,15 @@ Install packages
 | ⬇️ <kbd><a href="https://github.com/fiso64/slsk-batchdl"><b>slsk-batchdl</b></a></kbd>          | Advanced download tool for Soulseek                         |
 | 🖌️ <kbd><a href="https://github.com/ChausseBenjamin/termpicker"><b>termpicker</b></a></kbd>     | A color picker for the terminal                             |
 | 🎮 <kbd><a href="https://pypi.org/project/vgamepad"><b>vgamepad</b></a></kbd>                   | Virtual XBox360 and DualShock4 gamepads in python           |
+
+## NixOS Modules
+
+### Apex Tux
+Install Apex Tux and add the necessary udev rule.
+```Nix
+{inputs, ...}: {
+  imports = [inputs.nix-packages.nixosModules.apex-tux]; # or `all` or `default`
+
+  programs.apex-tux.enable = true;
+}
+```
