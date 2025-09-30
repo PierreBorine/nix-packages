@@ -29,17 +29,18 @@ stdenv.mkDerivation (finalAttrs: {
     cmake
     qttools
     wrapQtAppsHook
-    kconfig
-    kcolorscheme
-    qtdeclarative
-    kiconthemes
-    qqc2-desktop-style
   ];
 
   buildInputs = [
     qtbase
     qtsvg
     qtwayland
+
+    kconfig
+    kcolorscheme
+    qtdeclarative
+    kiconthemes
+    qqc2-desktop-style
   ];
 
   cmakeFlags = [
