@@ -8,7 +8,7 @@ self: {
 in {
   options.programs.apex-tux = {
     enable = lib.mkEnableOption "apex-tux";
-    package = lib.mkPackageOption self.packages.${pkgs.stdenv.system} "apex-tux";
+    package = lib.mkPackageOption self.packages.${pkgs.hostPlatform.system} "apex-tux";
   };
 
   config = lib.mkIf cfg.enable {
