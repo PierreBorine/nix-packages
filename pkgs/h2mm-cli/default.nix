@@ -13,12 +13,11 @@
   unzip,
   unar,
 }: let
-  inherit (lib.strings) removeSuffix makeBinPath;
-  inherit (builtins) readFile;
+  inherit (lib.strings) fileContents makeBinPath;
 in
   stdenvNoCC.mkDerivation {
     pname = "h2mm-cli";
-    version = removeSuffix "\n" (readFile "${inputs.h2mm}/version");
+    version = fileContents "${inputs.h2mm}/version";
 
     src = inputs.h2mm;
 
