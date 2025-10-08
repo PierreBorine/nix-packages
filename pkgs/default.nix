@@ -19,6 +19,7 @@ in rec {
   header-gen = callPackage ./header-gen {};
   lutebot = callPackage ./lutebot {};
   qt6ct-kde = pkgs.kdePackages.callPackage ./qt6ct-kde {};
+  reddix = callPackage ./reddix {};
   slsk-batchdl = callPackage ./slsk-batchdl {};
   termpicker = callPackage ./termpicker {};
   vgamepad = pkgs.python3Packages.callPackage ./vgamepad {};
