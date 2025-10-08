@@ -54,6 +54,7 @@ or add them to a custom namespace of `pkgs` using an overlay
 | ❄️ <kbd><b>header-gen</b></kbd>                                                                 | Custom Bash script to generate fancy comment headers        |
 | 🎸 <kbd><a href="https://github.com/Dimencia/LuteBot3"><b>lutebot</b></a></kbd>                 | Windows program to help play music on Mordhau ([install guide](https://github.com/PierreBorine/nix-packages/tree/master/pkgs/lutebot/README.md))|
 | 🧠 <kbd><a href="https://github.com/ilya-fedin/qt6ct"><b>qt6ct-kde</b></a></kbd>                | Fork of qt6ct with KDE color-schemes support                |
+| 🟠 <kbd><a href="https://github.com/ck-zhang/reddix"><b>reddix</b></a></kbd>                    | Reddit TUI client                                           |
 | ⬇️ <kbd><a href="https://github.com/fiso64/slsk-batchdl"><b>slsk-batchdl</b></a></kbd>          | Advanced download tool for Soulseek                         |
 | 🖌️ <kbd><a href="https://github.com/ChausseBenjamin/termpicker"><b>termpicker</b></a></kbd>     | A color picker for the terminal                             |
 | 🎮 <kbd><a href="https://pypi.org/project/vgamepad"><b>vgamepad</b></a></kbd>                   | Virtual XBox360 and DualShock4 gamepads in python           |
