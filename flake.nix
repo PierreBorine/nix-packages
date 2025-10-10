@@ -15,26 +15,31 @@
     ...
   } @ inputs: let
     systems = ["x86_64-linux"];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
+    forAllSystems = f:
+      nixpkgs.lib.genAttrs systems (system:
+        f {
+          inherit system;
+          pkgs = import nixpkgs {
+            inherit system;
+            config = {
+              allowUnfreePredicate = pkg:
+                builtins.elem (nixpkgs.lib.getName pkg) [
+                  "barotrauma-save-decompressor"
+                ];
+            };
+          };
+        });
   in {
     packages = forAllSystems (
-      system: let
-        pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfreePredicate = pkg:
-              builtins.elem (nixpkgs.lib.getName pkg) [
-                "barotrauma-save-decompressor"
-              ];
-          };
-        };
-      in
-        self.lib.mkPackages pkgs
+      {pkgs, ...}: self.lib.mkPackages pkgs
+    );
+
+    legacyPackages = forAllSystems (
+      {pkgs, ...}: pkgs.callPackage ./builders {}
     );
 
     lib.mkPackages = pkgs:
-      import ./pkgs {inherit inputs pkgs;}
-      // import ./builders {inherit pkgs;};
+      pkgs.callPackage ./pkgs {inherit inputs;};
 
     nixosModules = import ./pkgs/nixos.nix self;
   };

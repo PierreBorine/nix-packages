@@ -1,16 +1,16 @@
 {
   inputs,
-  pkgs,
-}: let
-  inherit (pkgs) callPackage;
-in rec {
+  callPackage,
+  python3Packages,
+  kdePackages,
+}: rec {
   apex-tux = callPackage ./apex-tux {inherit inputs;};
   asciid = callPackage ./asciid {};
-  barotrauma-modding-tool = pkgs.python3Packages.callPackage ./barotrauma-modding-tool {
+  barotrauma-modding-tool = python3Packages.callPackage ./barotrauma-modding-tool {
     inherit dearpygui;
   };
   barotrauma-save-decompressor = callPackage ./barotrauma-save-decompressor {};
-  dearpygui = pkgs.python3Packages.callPackage ./dearpygui {};
+  dearpygui = python3Packages.callPackage ./dearpygui {};
   exabind = callPackage ./exabind {};
   ffmpegfs = callPackage ./ffmpegfs {};
   frankensteiner = callPackage ./frankensteiner {};
@@ -18,9 +18,9 @@ in rec {
   h2mm-cli = callPackage ./h2mm-cli {};
   header-gen = callPackage ./header-gen {};
   lutebot = callPackage ./lutebot {};
-  qt6ct-kde = pkgs.kdePackages.callPackage ./qt6ct-kde {};
+  qt6ct-kde = kdePackages.callPackage ./qt6ct-kde {};
   reddix = callPackage ./reddix {};
   slsk-batchdl = callPackage ./slsk-batchdl {};
   termpicker = callPackage ./termpicker {};
-  vgamepad = pkgs.python3Packages.callPackage ./vgamepad {};
+  vgamepad = python3Packages.callPackage ./vgamepad {};
 }

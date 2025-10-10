@@ -1,3 +1,3 @@
-{pkgs}: {
-  compileScssFile = import ./compile-scss-file.nix pkgs;
+{callPackage}: {
+  compileScssFile = callPackage ./compile-scss-file.nix {};
 }
