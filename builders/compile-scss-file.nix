@@ -1,16 +1,12 @@
-pkgs: name: src:
-pkgs.stdenvNoCC.mkDerivation {
-  inherit name src;
-
+{
+  runCommand,
+  dart-sass,
+}: name: src:
+runCommand name {
+  inherit src;
   passAsFile = ["text"];
-  nativeBuildInputs = [pkgs.dart-sass];
-  phases = ["buildPhase" "installPhase"];
-
-  buildPhase = ''
-    sass --no-source-map $src:${name}
-  '';
-
-  installPhase = ''
-    cp ${name} $out
-  '';
-}
+  nativeBuildInputs = [dart-sass];
+} ''
+  sass --no-source-map $src:${name}
+  cp ${name} $out
+''
