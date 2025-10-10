@@ -7,11 +7,6 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    h2mm = {
-      url = "github:v4n00/h2mm-cli";
-      flake = false;
-    };
   };
 
   outputs = {
