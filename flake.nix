@@ -35,11 +35,11 @@
     );
 
     legacyPackages = forAllSystems (
-      {pkgs, ...}: pkgs.callPackage ./builders {}
+      {pkgs, ...}: import ./builders pkgs
     );
 
     lib.mkPackages = pkgs:
-      pkgs.callPackage ./pkgs {inherit inputs;};
+      import ./pkgs pkgs inputs;
 
     nixosModules = import ./pkgs/nixos.nix self;
   };
