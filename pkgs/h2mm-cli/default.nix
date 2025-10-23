@@ -21,7 +21,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     owner = "v4n00";
     repo = "h2mm-cli";
     rev = "v${finalAttrs.version}";
-    sha256 = "";
+    sha256 = "sha256-MwARc/gR5BAjLh+Xw62TADo/QL1l+SYgZfbXeSYIqG4=";
   };
 
   nativeBuildInputs = [makeWrapper];
