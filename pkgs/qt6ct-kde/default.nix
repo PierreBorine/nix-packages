@@ -1,6 +1,6 @@
 {
   cmake,
-  fetchFromGitHub,
+  fetchFromGitLab,
   lib,
   qtbase,
   qtsvg,
@@ -18,11 +18,12 @@ stdenv.mkDerivation (finalAttrs: {
   pname = "qt6ct-kde";
   version = "0.10";
 
-  src = fetchFromGitHub {
+  src = fetchFromGitLab {
+    domain = "opencode.net";
     owner = "ilya-fedin";
     repo = "qt6ct";
-    rev = finalAttrs.version;
-    hash = "sha256-ePY+BEpEcAq11+pUMjQ4XG358x3bXFQWwI1UAi+KmLo=";
+    rev = "b8d0b8f1489abdcfcb1ddcb775d020a88e9abd45"; # shenanigans branch
+    hash = "sha256-i7rm9kShaVIf6ChFngexCDKjX02htDrtHCcNCxPslRE=";
   };
 
   nativeBuildInputs = [
