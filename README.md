@@ -58,6 +58,7 @@ or add them to a custom namespace of `pkgs` using an overlay
 | ⬇️ <kbd><a href="https://github.com/fiso64/slsk-batchdl"><b>slsk-batchdl</b></a></kbd>          | Advanced download tool for Soulseek                         |
 | 🖌️ <kbd><a href="https://github.com/ChausseBenjamin/termpicker"><b>termpicker</b></a></kbd>     | A color picker for the terminal                             |
 | 🎮 <kbd><a href="https://pypi.org/project/vgamepad"><b>vgamepad</b></a></kbd>                   | Virtual XBox360 and DualShock4 gamepads in python           |
+| 📊 <kbd><a href="https://github.com/sahaj-b/wakafetch"><b>wakafetch</b></a></kbd>               | Terminal dashboard for WakaTime/Wakapi                 |
 
 ## NixOS Modules
 

@@ -20,4 +20,5 @@ in rec {
   slsk-batchdl = callPackage ./slsk-batchdl {};
   termpicker = callPackage ./termpicker {};
   vgamepad = python3Packages.callPackage ./vgamepad {};
+  wakafetch = callPackage ./wakafetch {};
 }
