@@ -7,8 +7,8 @@
   gnused,
   gnugrep,
   gawk,
-  uutils-findutils,
-  uutils-coreutils-noprefix,
+  findutils,
+  coreutils,
   curlMinimal,
   unzip,
   unar,
@@ -36,8 +36,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       gnused
       gnugrep
       gawk
-      uutils-findutils
-      uutils-coreutils-noprefix
+      findutils
+      coreutils
       curlMinimal
       unzip
       unar
