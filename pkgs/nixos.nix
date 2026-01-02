@@ -1,5 +1,4 @@
 self: rec {
-  default = all;
-  all = apex-tux;
+  default = apex-tux;
   apex-tux = import ./apex-tux/nixos.nix self;
 }

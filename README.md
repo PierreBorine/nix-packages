@@ -67,7 +67,7 @@ or add them to a custom namespace of `pkgs` using an overlay
 Install Apex Tux and add the necessary udev rule.
 ```Nix
 {inputs, ...}: {
-  imports = [inputs.nix-packages.nixosModules.apex-tux]; # or `all` or `default`
+  imports = [inputs.nix-packages.nixosModules.apex-tux]; # or `default`
 
   programs.apex-tux.enable = true;
 }
