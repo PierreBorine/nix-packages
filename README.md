@@ -31,7 +31,7 @@ or add them to a custom namespace of `pkgs` using an overlay
 ```Nix
 {inputs, pkgs, ...}: {
   nixpkgs.overlays = [
-    (_: prev: {my = inputs.nix-packages.lib.mkPackages prev;})
+    (_: prev: {my = inputs.nix-packages prev;})
   ];
 
   environment.systemPackages = [pkgs.my.<package_name>];

@@ -31,16 +31,17 @@
         });
   in {
     packages = forAllSystems (
-      {pkgs, ...}: self.lib.mkPackages pkgs
+      {pkgs, ...}: import ./pkgs pkgs inputs
     );
 
     legacyPackages = forAllSystems (
       {pkgs, ...}: import ./builders pkgs
     );
 
-    lib.mkPackages = pkgs:
-      import ./pkgs pkgs inputs;
-
     nixosModules = import ./pkgs/nixos.nix self;
+
+    __functor = _: fpkgs:
+      import ./pkgs fpkgs inputs
+      // import ./builders fpkgs;
   };
 }
