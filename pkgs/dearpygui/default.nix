@@ -4,7 +4,11 @@
   fetchFromGitHub,
   cmake,
   setuptools-scm,
-  xorg,
+  libX11,
+  libXcursor,
+  libXi,
+  libXinerama,
+  libXrandr,
   libglvnd,
   libxcrypt,
   pillow,
@@ -33,19 +37,16 @@ buildPythonPackage rec {
     export MAKEFLAGS="''${MAKEFLAGS:+''${MAKEFLAGS} }-j$NIX_BUILD_CORES"
   '';
 
-  buildInputs = with xorg;
-    [
-      libX11
-      libXcursor
-      libXi
-      libXinerama
-      libXrandr
-    ]
-    ++ [
-      libglvnd
-      libxcrypt
-      wheel
-    ];
+  buildInputs = [
+    libX11
+    libXcursor
+    libXi
+    libXinerama
+    libXrandr
+    libglvnd
+    libxcrypt
+    wheel
+  ];
 
   propagatedBuildInputs = [pillow];
   doCheck = false;
