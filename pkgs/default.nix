@@ -1,7 +1,7 @@
-pkgs: inputs: let
+pkgs: let
   inherit (pkgs) callPackage python3Packages kdePackages;
 in rec {
-  apex-tux = callPackage ./apex-tux {inherit inputs;};
+  apex-tux = callPackage ./apex-tux {};
   asciid = callPackage ./asciid {};
   barotrauma-modding-tool = python3Packages.callPackage ./barotrauma-modding-tool {
     inherit dearpygui;
