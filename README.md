@@ -11,7 +11,9 @@ My personal Nix packages repo.
 > You can use this flake as you wish, but I may not test or update it rigorously.
 
 ## How to use
+
 Add this flake to your's.
+
 ```Nix
 {
   inputs = {
@@ -19,7 +21,9 @@ Add this flake to your's.
   };
 }
 ```
+
 Install individual packages
+
 ```Nix
 {inputs, pkgs, ...}: {
   home.packages = [
@@ -27,7 +31,9 @@ Install individual packages
   ];
 }
 ```
+
 or add them to a custom namespace of `pkgs` using an overlay
+
 ```Nix
 {inputs, pkgs, ...}: {
   nixpkgs.overlays = [
@@ -39,6 +45,7 @@ or add them to a custom namespace of `pkgs` using an overlay
 ```
 
 ## Packages
+
 | Name                                                                                            | Description                                                 |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
 | ⌨️ <kbd><a href="https://github.com/not-jan/apex-tux"><b>apex-tux</b></a></kbd>                 | Use the OLED screen on Steelseries Apex keyboards           |
@@ -64,7 +71,9 @@ or add them to a custom namespace of `pkgs` using an overlay
 ## NixOS Modules
 
 ### Apex Tux
+
 Install Apex Tux and add the necessary udev rule.
+
 ```Nix
 {inputs, ...}: {
   imports = [inputs.nix-packages.nixosModules.apex-tux]; # or `default`
