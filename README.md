@@ -17,7 +17,7 @@ Add this flake to your's.
 ```Nix
 {
   inputs = {
-    nix-packages.url = "github:PierreBorine/nix-packages";
+    nix-packages.url = "git+https://codeberg.org/PierreBorine/nix-packages.git";
   };
 }
 ```
