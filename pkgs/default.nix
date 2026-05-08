@@ -14,6 +14,7 @@ in rec {
   glwall = callPackage ./glwall {};
   h2mm-cli = callPackage ./h2mm-cli {};
   header-gen = callPackage ./header-gen {};
+  hyprselect = callPackage ./hyprselect {};
   lutebot = callPackage ./lutebot {};
   push-swap-visualizer = callPackage ./push-swap-visualizer {};
   qt6ct-kde = kdePackages.callPackage ./qt6ct-kde {};
