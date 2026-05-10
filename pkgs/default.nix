@@ -7,6 +7,7 @@ in rec {
     inherit dearpygui;
   };
   barotrauma-save-decompressor = callPackage ./barotrauma-save-decompressor {};
+  binbreak = callPackage ./binbreak {};
   dearpygui = python3Packages.callPackage ./dearpygui {};
   exabind = callPackage ./exabind {};
   ffmpegfs = callPackage ./ffmpegfs {};
