@@ -27,7 +27,7 @@ Install individual packages
 ```Nix
 {inputs, pkgs, ...}: {
   home.packages = [
-    inputs.nix-packages.packages.${pkgs.hostPlatform.system}.<package_name>
+    inputs.nix-packages.packages.${pkgs.stdenv.hostPlatform.system}.<package_name>
   ];
 }
 ```
