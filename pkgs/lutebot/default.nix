@@ -1,55 +1,54 @@
 {
-  writeShellScript,
+  lib,
   stdenvNoCC,
   fetchzip,
-  protontricks,
+  makeWrapper,
   makeDesktopItem,
   copyDesktopItems,
-}: let
-  name = "lutebot";
-  version = "3.6.5";
+  protontricks,
+}:
+stdenvNoCC.mkDerivation (finalAttrs: {
+  pname = "lutebot";
+  version = "3.6.4"; # 3.6.5 kinda broke lutemod
 
-  lutebotExe =
-    (fetchzip {
-      url = "https://github.com/Dimencia/LuteBot3/releases/download/v${version}/LuteBot.${version}.zip";
-      hash = "sha256-u5PsqqVcpL+RiYn3eS0CU5l50lH1NKa0WKpkYajASy4=";
+  src = fetchzip {
+    url = "https://github.com/Dimencia/LuteBot3/releases/download/v${finalAttrs.version}/LuteBot.${finalAttrs.version}.zip";
+    hash = "sha256-R8Zx7WU0/n+rPRmSDlK4s1IT5yfgkHSzGDIffYevZ3M=";
+  };
+
+  nativeBuildInputs = [copyDesktopItems makeWrapper];
+
+  desktopItems = [
+    (makeDesktopItem {
+      name = "LuteBot";
+      desktopName = "LuteBot";
+      genericName = "Mordhau Music Tool";
+      exec = "lutebot";
+      icon = ./mordhau.png;
+      terminal = false;
+      categories = ["Application" "Game" "Utility" "Audio"];
     })
-    + "/bin/Release/net7.0-windows/LuteBot.exe";
+  ];
 
-  script = writeShellScript name ''
-    ${protontricks}/bin/protontricks -c "wine ${lutebotExe}" 629760
+  phases = ["installPhase"];
+
+  installPhase = ''
+    runHook preInstall
+
+    mkdir -p $out/share
+
+    cp -r $src/bin/Release/net7.0-windows $out/share/lutebot
+
+    makeWrapper ${lib.getExe' protontricks "protontricks"} $out/bin/lutebot \
+      --add-flags "-c 'wine $out/share/lutebot/LuteBot.exe' 629760"
+
+    runHook postInstall
   '';
-in
-  stdenvNoCC.mkDerivation {
-    pname = name;
-    inherit version;
 
-    src = script;
-
-    nativeBuildInputs = [copyDesktopItems];
-
-    desktopItems = [
-      (makeDesktopItem {
-        name = "LuteBot";
-        desktopName = "LuteBot";
-        genericName = "Mordhau Music Tool";
-        exec = name;
-        icon = "mordhau";
-        terminal = false;
-        categories = ["Application" "Game" "Utility" "Audio"];
-      })
-    ];
-
-    phases = ["installPhase"];
-    installPhase = ''
-      runHook preInstall
-
-      mkdir -p $out/bin
-      cp $src $out/bin/${name}
-
-      mkdir -p $out/share/icons/hicolor
-      cp -r ${./icons}/* $out/share/icons/hicolor
-
-      runHook postInstall
-    '';
-  }
+  meta = {
+    description = "A companion program for LuteMod, a Mordhau mod to play music";
+    homepage = "https://github.com/Dimencia/LuteBot3";
+    sourceProvenance = [lib.sourceTypes.binaryBytecode];
+    license = lib.licenses.mit;
+  };
+})
