@@ -53,6 +53,7 @@ or add them to a custom namespace of `pkgs` using an overlay
 | <kbd><a href="https://github.com/themanyfaceddemon/Barotrauma_Modding_Tool"><b>barotrauma-modding-tool</b></a></kbd> | Mod utility for the game Barotrauma |
 | <kbd><a href="https://github.com/Jlobblet/Barotrauma-Save-Decompressor"><b>barotrauma-save-decompressor</b></a></kbd>| Decompress Barotrauma saves         |
 | <kbd><a href="https://github.com/epic-64/binbreak"><b>binbreak</b></a></kbd>              | Terminal based binary number guessing game                  |
+| <kbd><a href="https://github.com/programmersd21/curv"><b>curv</b></a></kbd>               | Bezier curves lab for your terminal                         |
 | <kbd><a href="https://github.com/hoffstadt/DearPyGui"><b>dearpygui</b></a></kbd>          | Graphical User Interface Toolkit for Python                 |
 | <kbd><a href="https://github.com/junkdog/exabind"><b>exabind</b></a></kbd>                | Animated TUI for viewing keyboard shortcuts                 |
 | <kbd><a href="https://github.com/nschlia/ffmpegfs"><b>ffmpegfs</b></a></kbd>              | FUSE-based transcoding filesystem with ffmpeg               |

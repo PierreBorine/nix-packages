@@ -8,6 +8,7 @@ in rec {
   };
   barotrauma-save-decompressor = callPackage ./barotrauma-save-decompressor {};
   binbreak = callPackage ./binbreak {};
+  curv = python3Packages.callPackage ./curv {};
   dearpygui = python3Packages.callPackage ./dearpygui {};
   exabind = callPackage ./exabind {};
   ffmpegfs = callPackage ./ffmpegfs {};
