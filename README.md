@@ -46,31 +46,31 @@ or add them to a custom namespace of `pkgs` using an overlay
 
 ## Packages
 
-| Name                                                                                      | Description                                                 |
-|-------------------------------------------------------------------------------------------|-------------------------------------------------------------|
-| <kbd><a href="https://github.com/not-jan/apex-tux"><b>apex-tux</b></a></kbd>              | Use the OLED screen on Steelseries Apex keyboards           |
-| <kbd><a href="https://www.dafont.com/asciid.font"><b>asciid</b></a></kbd>                 | A ascii themed font                                         |
-| <kbd><a href="https://github.com/themanyfaceddemon/Barotrauma_Modding_Tool"><b>barotrauma-modding-tool</b></a></kbd> | Mod utility for the game Barotrauma |
-| <kbd><a href="https://github.com/Jlobblet/Barotrauma-Save-Decompressor"><b>barotrauma-save-decompressor</b></a></kbd>| Decompress Barotrauma saves         |
-| <kbd><a href="https://github.com/epic-64/binbreak"><b>binbreak</b></a></kbd>              | Terminal based binary number guessing game                  |
-| <kbd><a href="https://github.com/programmersd21/curv"><b>curv</b></a></kbd>               | Bezier curves lab for your terminal                         |
-| <kbd><a href="https://github.com/hoffstadt/DearPyGui"><b>dearpygui</b></a></kbd>          | Graphical User Interface Toolkit for Python                 |
-| <kbd><a href="https://github.com/junkdog/exabind"><b>exabind</b></a></kbd>                | Animated TUI for viewing keyboard shortcuts                 |
-| <kbd><a href="https://github.com/nschlia/ffmpegfs"><b>ffmpegfs</b></a></kbd>              | FUSE-based transcoding filesystem with ffmpeg               |
-| <kbd><a href="https://github.com/Dealman/Frankensteiner"><b>frankensteiner</b></a></kbd>  | Windows program to edit Mordhau mercenaries faces           |
-| <kbd><a href="https://github.com/ikz87/GLWall"><b>glwall</b></a></kbd>                    | Fragment shader renderer for live and responsive wallpapers |
-| <kbd><a href="https://github.com/v4n00/h2mm-cli"><b>h2mm-cli</b></a></kbd>                | Helldivers 2 Mod Manager CLI                                |
-| <kbd><a href="https://www.nexusmods.com/helldivers2/mods/4664"><b>hd2arsenal</b></a></kbd>| Helldivers 2 Mod Manager GUI (manual download from Nexus)   |
-| <kbd><b>header-gen</b></kbd>                                                              | Custom Bash script to generate fancy comment headers        |
-| <kbd><a href="https://github.com/jmanc3/hyprselect"><b>hyprselect</b></a></kbd>           | Hyprland plugin that adds a desktop selection box           |
-| <kbd><a href="https://github.com/Dimencia/LuteBot3"><b>lutebot</b></a></kbd>              | Windows program to help play music on Mordhau ([install guide](https://github.com/PierreBorine/nix-packages/tree/master/pkgs/lutebot/README.md))|
-| <kbd><a href="https://github.com/o-reo/push_swap_visualizer"><b>push-swap-visualizer</b></a></kbd>| Graphical visualizer for the 42 shool push_swap project|
-| <kbd><a href="https://github.com/ilya-fedin/qt6ct"><b>qt6ct-kde</b></a></kbd>             | Fork of qt6ct with KDE color-schemes support                |
-| <kbd><a href="https://github.com/fiso64/slsk-batchdl"><b>slsk-batchdl</b></a></kbd>       | Advanced download tool for Soulseek                         |
-| <kbd><a href="https://github.com/spotify2tidal/spotify_to_tidal"><b>spotify-to-tidal</b></a></kbd>| Command line tool for importing Spotify playlists into Tidal|
-| <kbd><a href="https://github.com/ChausseBenjamin/termpicker"><b>termpicker</b></a></kbd>  | A color picker for the terminal                             |
-| <kbd><a href="https://pypi.org/project/vgamepad"><b>vgamepad</b></a></kbd>                | Virtual XBox360 and DualShock4 gamepads in python           |
-| <kbd><a href="https://github.com/sahaj-b/wakafetch"><b>wakafetch</b></a></kbd>            | Terminal dashboard for WakaTime/Wakapi                      |
+| Name                                                           | Description                                                          |
+|----------------------------------------------------------------|----------------------------------------------------------------------|
+| [apex-tux]("https://github.com/not-jan/apex-tux")              | Use the OLED screen on Steelseries Apex keyboards                    |
+| [asciid]("https://www.dafont.com/asciid.font")                 | A ascii themed font                                                  |
+| [barotrauma-modding-tool]("https://github.com/themanyfaceddemon/Barotrauma_Modding_Tool") | Mod utility for the game Barotrauma       |
+| [barotrauma-save-decompressor]("https://github.com/Jlobblet/Barotrauma-Save-Decompressor") | Decompress Barotrauma saves              |
+| [binbreak]("https://github.com/epic-64/binbreak")              | Terminal based binary number guessing game                           |
+| [curv]("https://github.com/programmersd21/curv")               | Bezier curves lab for your terminal                                  |
+| [dearpygui]("https://github.com/hoffstadt/DearPyGui")          | Graphical User Interface Toolkit for Python                          |
+| [exabind]("https://github.com/junkdog/exabind")                | Animated TUI for viewing keyboard shortcuts                          |
+| [ffmpegfs]("https://github.com/nschlia/ffmpegfs")              | FUSE-based transcoding filesystem with ffmpeg                        |
+| [frankensteiner]("https://github.com/Dealman/Frankensteiner")  | Windows program to edit Mordhau mercenaries faces                    |
+| [glwall]("https://github.com/ikz87/GLWall")                    | Fragment shader renderer for live and responsive wallpapers          |
+| [h2mm-cli]("https://github.com/v4n00/h2mm-cli")                | Helldivers 2 Mod Manager CLI                                         |
+| [hd2arsenal]("https://www.nexusmods.com/helldivers2/mods/4664")|Helldivers 2 Mod Manager GUI (manual download from Nexus)             |
+| header-gen                                                     | Custom Bash script to generate fancy comments and headers            |
+| [hyprselect]("https://github.com/jmanc3/hyprselect")           | Hyprland plugin that adds a desktop selection box                    |
+| [lutebot]("https://github.com/Dimencia/LuteBot3")              | Windows program to help play music on Mordhau ([install guide](https://github.com/PierreBorine/nix-packages/tree/master/pkgs/lutebot/README.md))|
+| [push-swap-visualizer]("https://github.com/o-reo/push_swap_visualizer") | Graphical visualizer for the 42 shool push_swap project     |
+| [qt6ct-kde]("https://github.com/ilya-fedin/qt6ct")             | Fork of qt6ct with KDE color-schemes support                         |
+| [slsk-batchdl]("https://github.com/fiso64/slsk-batchdl")       | Advanced download tool for Soulseek                                  |
+| [spotify-to-tidal]("https://github.com/spotify2tidal/spotify_to_tidal") | Command line tool for importing Spotify playlists into Tidal|
+| [termpicker]("https://github.com/ChausseBenjamin/termpicker")  | A color picker for the terminal                                      |
+| [vgamepad]("https://pypi.org/project/vgamepad")                | Virtual XBox360 and DualShock4 gamepads in python                    |
+| [wakafetch]("https://github.com/sahaj-b/wakafetch")            | Terminal dashboard for WakaTime/Wakapi                               |
 
 ## NixOS Modules
 
