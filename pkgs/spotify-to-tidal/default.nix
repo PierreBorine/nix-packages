@@ -42,5 +42,6 @@ buildPythonPackage rec {
     homepage = "https://github.com/spotify2tidal/spotify_to_tidal";
     changelog = "https://github.com/spotify2tidal/spotify_to_tidal/releases/tag/v${version}";
     license = lib.licenses.agpl3Only;
+    mainProgram = "spotify_to_tidal";
   };
 }
