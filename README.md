@@ -60,6 +60,7 @@ or add them to a custom namespace of `pkgs` using an overlay
 | <kbd><a href="https://github.com/Dealman/Frankensteiner"><b>frankensteiner</b></a></kbd>  | Windows program to edit Mordhau mercenaries faces           |
 | <kbd><a href="https://github.com/ikz87/GLWall"><b>glwall</b></a></kbd>                    | Fragment shader renderer for live and responsive wallpapers |
 | <kbd><a href="https://github.com/v4n00/h2mm-cli"><b>h2mm-cli</b></a></kbd>                | Helldivers 2 Mod Manager CLI                                |
+| <kbd><a href="https://www.nexusmods.com/helldivers2/mods/4664"><b>hd2arsenal</b></a></kbd>| Helldivers 2 Mod Manager GUI (manual download from Nexus)   |
 | <kbd><b>header-gen</b></kbd>                                                              | Custom Bash script to generate fancy comment headers        |
 | <kbd><a href="https://github.com/jmanc3/hyprselect"><b>hyprselect</b></a></kbd>           | Hyprland plugin that adds a desktop selection box           |
 | <kbd><a href="https://github.com/Dimencia/LuteBot3"><b>lutebot</b></a></kbd>              | Windows program to help play music on Mordhau ([install guide](https://github.com/PierreBorine/nix-packages/tree/master/pkgs/lutebot/README.md))|

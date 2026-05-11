@@ -15,6 +15,7 @@ in rec {
   frankensteiner = callPackage ./frankensteiner {};
   glwall = callPackage ./glwall {};
   h2mm-cli = callPackage ./h2mm-cli {};
+  hd2arsenal = callPackage ./hd2arsenal {};
   header-gen = callPackage ./header-gen {};
   hyprselect = callPackage ./hyprselect {};
   lutebot = callPackage ./lutebot {};
