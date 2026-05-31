@@ -19,6 +19,7 @@ in rec {
   header-gen = callPackage ./header-gen {};
   hyprselect = callPackage ./hyprselect {};
   lutebot = callPackage ./lutebot {};
+  mo2-lint = python3Packages.callPackage ./mo2-lint {};
   push-swap-visualizer = callPackage ./push-swap-visualizer {};
   qt6ct-kde = kdePackages.callPackage ./qt6ct-kde {};
   slsk-batchdl = callPackage ./slsk-batchdl {};
