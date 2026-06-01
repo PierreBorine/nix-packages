@@ -46,7 +46,7 @@
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-Oa7kncQpU4HXv/aq7cXrJ5xW+MiNG8P14NJw8Kp2cXA=";
+    outputHash = "sha256-Dom5zV51dMTFqbtVXtF4Rkr9z8k8ZRq7Zu51V2YQcWY=";
 
     nativeBuildInputs = [python pip];
 
