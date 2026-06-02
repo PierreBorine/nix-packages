@@ -19,6 +19,7 @@ in rec {
   header-gen = callPackage ./header-gen {};
   hyprselect = callPackage ./hyprselect {};
   libloot-cpp = callPackage ./libloot-cpp {};
+  loot = callPackage ./loot {inherit libloot-cpp svg-to-ico;};
   lutebot = callPackage ./lutebot {};
   mo2-lint = python3Packages.callPackage ./mo2-lint {};
   push-swap-visualizer = callPackage ./push-swap-visualizer {};
