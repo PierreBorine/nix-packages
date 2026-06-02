@@ -18,6 +18,7 @@ in rec {
   hd2arsenal = callPackage ./hd2arsenal {};
   header-gen = callPackage ./header-gen {};
   hyprselect = callPackage ./hyprselect {};
+  libloot-cpp = callPackage ./libloot-cpp {};
   lutebot = callPackage ./lutebot {};
   mo2-lint = python3Packages.callPackage ./mo2-lint {};
   push-swap-visualizer = callPackage ./push-swap-visualizer {};
