@@ -49,6 +49,7 @@ stdenv.mkDerivation (finalAttrs: {
   cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"
     "-DBoost_USE_STATIC_LIBS=OFF"
+    "-DGIT_COMMIT_STRING=${finalAttrs.src.rev}"
 
     "-DFETCHCONTENT_SOURCE_DIR_MINIZIP=${finalAttrs.passthru.minizip-src}"
     "-DFETCHCONTENT_SOURCE_DIR_VALVEFILEVDF=${finalAttrs.passthru.ValveFileVDF-src}"
