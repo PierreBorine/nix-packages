@@ -25,6 +25,7 @@ in rec {
   qt6ct-kde = kdePackages.callPackage ./qt6ct-kde {};
   slsk-batchdl = callPackage ./slsk-batchdl {};
   spotify-to-tidal = python3Packages.callPackage ./spotify-to-tidal {};
+  svg-to-ico = callPackage ./svg-to-ico {};
   termpicker = callPackage ./termpicker {};
   vgamepad = python3Packages.callPackage ./vgamepad {};
   wakafetch = callPackage ./wakafetch {};
