@@ -92,11 +92,12 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out/bin $out/share
+    mkdir -p $out/bin $out/share/applications
     cp dist/mo2-lint dist/nxm-handler $out/bin
+    mv configs/nxm-handler.desktop $out/share/applications
     cp -r configs $out/share/mo2-lint
 
-    substituteInPlace $out/share/mo2-lint/nxm-handler.desktop \
+    substituteInPlace $out/share/applications/nxm-handler.desktop \
       --replace-fail '$HOME/.local/share/mo2-lint/nxm-handler' "$out/bin/nxm-handler"
 
     runHook postInstall
