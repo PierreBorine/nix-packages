@@ -2,6 +2,7 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
+  nix-update-script,
   cmake,
   setuptools-scm,
   libX11,
@@ -55,6 +56,8 @@ buildPythonPackage (finalAttrs: {
     "dearpygui"
     "dearpygui.dearpygui"
   ];
+
+  passthru.updateScript = nix-update-script {extraArgs = ["--flake"];};
 
   meta = {
     description = "Dear PyGui: A fast and powerful Graphical User Interface Toolkit for Python with minimal dependencies";
