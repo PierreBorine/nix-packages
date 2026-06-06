@@ -6,6 +6,7 @@
   fetchurl,
   toPythonModule,
   makePythonPath,
+  makeWrapper,
   writableTmpDirAsHomeHook,
   # build deps
   wineWow64Packages,
@@ -30,6 +31,8 @@
   send2trash,
   websockets,
   protontricks,
+  winetricks,
+  killall,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "mo2-lint";
@@ -49,6 +52,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
     wineWow64Packages.stable
     writableTmpDirAsHomeHook
+    makeWrapper
     # not actually used, but necessary for make to succeed
     curl
     unzip
@@ -99,6 +103,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
     substituteInPlace $out/share/applications/nxm-handler.desktop \
       --replace-fail '$HOME/.local/share/mo2-lint/nxm-handler' "$out/bin/nxm-handler"
+
+    wrapProgram $out/bin/mo2-lint \
+      --set PATH ${lib.makeBinPath [winetricks protontricks killall]}
 
     runHook postInstall
   '';
