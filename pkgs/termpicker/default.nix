@@ -2,6 +2,8 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+  nix-update-script,
+  versionCheckHook,
 }:
 buildGoModule (finalAttrs: {
   pname = "termpicker";
@@ -16,11 +18,15 @@ buildGoModule (finalAttrs: {
 
   vendorHash = "sha256-M5YZaJdv9D8NkwD+T8tAtGH5P4IKcgjqpUoKVfLo+C0=";
 
+  nativeBuildInputs = [versionCheckHook];
+
   ldflags = [
     "-s"
     "-w"
     "-X=main.version=${finalAttrs.version}"
   ];
+
+  passthru.updateScript = nix-update-script {extraArgs = ["--flake"];};
 
   meta = {
     description = "A color picker for the terminal";
