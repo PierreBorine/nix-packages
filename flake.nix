@@ -34,8 +34,10 @@
 
     nixosModules = import ./pkgs/nixos.nix self;
 
-    __functor = _: fpkgs:
+    overlays.default = _: fpkgs:
       import ./pkgs fpkgs
       // import ./builders fpkgs;
+
+    __functor = self.overlays.default;
   };
 }
