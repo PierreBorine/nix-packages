@@ -59,8 +59,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
     runHook postInstall
   '';
 
-  doCheck = false;
-
   passthru.updateScript = nix-update-script {};
 
   meta = {
