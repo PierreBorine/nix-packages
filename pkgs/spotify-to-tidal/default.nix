@@ -12,7 +12,7 @@
   pytest_8_3,
   pytest-mock,
 }:
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "spotify-to-tidal";
   version = "1.0.7";
   pyproject = true;
@@ -20,7 +20,7 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "spotify2tidal";
     repo = "spotify_to_tidal";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-7J3rEdqS5AJZnNW3J+x54EJ4Wjh112GnASrH1SCRkG4=";
   };
 
@@ -40,8 +40,8 @@ buildPythonPackage rec {
   meta = {
     description = "A command line tool for importing your Spotify playlists into Tidal";
     homepage = "https://github.com/spotify2tidal/spotify_to_tidal";
-    changelog = "https://github.com/spotify2tidal/spotify_to_tidal/releases/tag/v${version}";
+    changelog = "https://github.com/spotify2tidal/spotify_to_tidal/releases/tag/v${finalAttrs.version}";
     license = lib.licenses.agpl3Only;
     mainProgram = "spotify_to_tidal";
   };
-}
+})

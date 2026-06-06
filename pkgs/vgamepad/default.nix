@@ -7,7 +7,7 @@
   libevdev,
   evdev,
 }:
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "vgamepad";
   version = "0.1.3";
   pyproject = true;
@@ -15,7 +15,7 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "yannbouteiller";
     repo = "vgamepad";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     hash = "sha256-VSik5dPBrGiQ9y7AwcVnt020NlAyIxZTIg3lbwNLZpk=";
   };
 
@@ -30,9 +30,9 @@ buildPythonPackage rec {
   meta = {
     description = "Virtual XBox360 and DualShock4 gamepads in python";
     homepage = "https://github.com/yannbouteiller/vgamepad";
-    changelog = "https://github.com/gvalkov/python-evdev/blob/v${version}/docs/changelog.rst";
+    changelog = "https://github.com/gvalkov/python-evdev/blob/v${finalAttrs.version}/docs/changelog.rst";
     license = lib.licenses.mit;
     maintainers = [];
     platforms = lib.platforms.linux;
   };
-}
+})
