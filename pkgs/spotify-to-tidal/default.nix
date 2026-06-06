@@ -9,7 +9,7 @@
   pyyaml,
   tqdm,
   sqlalchemy,
-  pytest,
+  pytest_8_3,
   pytest-mock,
 }:
 buildPythonPackage rec {
@@ -33,7 +33,7 @@ buildPythonPackage rec {
     pyyaml
     tqdm
     sqlalchemy
-    pytest
+    pytest_8_3
     pytest-mock
   ];
 
