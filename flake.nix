@@ -7,6 +7,7 @@
     self,
     nixpkgs,
   }: let
+    inherit (nixpkgs) lib;
     systems = ["x86_64-linux"];
     forAllSystems = f:
       nixpkgs.lib.genAttrs systems (system:
@@ -37,6 +38,29 @@
     overlays.default = _: fpkgs:
       import ./pkgs fpkgs
       // import ./builders fpkgs;
+
+    apps = forAllSystems (
+      {
+        system,
+        pkgs,
+        ...
+      }: {
+        update-all = let
+          update = "${lib.getExe pkgs.nix-update} --flake -u --build --commit";
+          updateScript = lib.pipe self.packages.${system} [
+            # filter out derivations with no updateScript
+            (lib.filterAttrs (_: v: v.passthru.updateScript or null != null))
+            # map them to nix-update commands
+            (lib.concatMapAttrsStringSep "\n" (n: _: "${update} ${n}"))
+            (pkgs.writeShellScript "update-all")
+          ];
+        in {
+          type = "app";
+          program = toString updateScript;
+          meta.description = "update all derivations implementing passthru.updateScript";
+        };
+      }
+    );
 
     __functor = self.overlays.default;
   };
