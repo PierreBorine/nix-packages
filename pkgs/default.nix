@@ -1,5 +1,5 @@
 pkgs: let
-  inherit (pkgs) callPackage python3Packages kdePackages;
+  inherit (pkgs) callPackage python3Packages;
 in rec {
   apex-tux = callPackage ./apex-tux {};
   asciid = callPackage ./asciid {};
@@ -22,7 +22,6 @@ in rec {
   loot = callPackage ./loot {inherit libloot-cpp svg-to-ico;};
   lutebot = callPackage ./lutebot {};
   mo2-lint = python3Packages.callPackage ./mo2-lint {};
-  qt6ct-kde = kdePackages.callPackage ./qt6ct-kde {};
   slsk-batchdl = callPackage ./slsk-batchdl {};
   spotify-to-tidal = python3Packages.callPackage ./spotify-to-tidal {};
   svg-to-ico = callPackage ./svg-to-ico {};
