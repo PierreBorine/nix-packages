@@ -2,6 +2,7 @@
   lib,
   fetchFromGitHub,
   buildPythonApplication,
+  nix-update-script,
   hatchling,
   pyperclip,
   readchar,
@@ -28,6 +29,10 @@ buildPythonApplication (finalAttrs: {
   ];
 
   pythonImportsCheck = ["curv"];
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = ["--flake" "--version=branch"];
+  };
 
   meta = {
     description = "Bezier curves lab for your terminal";
