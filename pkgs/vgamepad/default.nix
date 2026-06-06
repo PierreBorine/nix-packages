@@ -9,14 +9,14 @@
 }:
 buildPythonPackage rec {
   pname = "vgamepad";
-  version = "0.1.0";
+  version = "0.1.3";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "yannbouteiller";
     repo = "vgamepad";
     rev = "v${version}";
-    hash = "sha256-3nCErxmY66ApfF1aPmTnOGOYv8QHMcnOBvVx0+FcID4=";
+    hash = "sha256-VSik5dPBrGiQ9y7AwcVnt020NlAyIxZTIg3lbwNLZpk=";
   };
 
   build-system = [setuptools];
