@@ -22,7 +22,6 @@ in rec {
   loot = callPackage ./loot {inherit libloot-cpp svg-to-ico;};
   lutebot = callPackage ./lutebot {};
   mo2-lint = python3Packages.callPackage ./mo2-lint {};
-  push-swap-visualizer = callPackage ./push-swap-visualizer {};
   qt6ct-kde = kdePackages.callPackage ./qt6ct-kde {};
   slsk-batchdl = callPackage ./slsk-batchdl {};
   spotify-to-tidal = python3Packages.callPackage ./spotify-to-tidal {};
