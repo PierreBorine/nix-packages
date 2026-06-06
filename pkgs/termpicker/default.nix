@@ -7,13 +7,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "termpicker";
-  version = "1.4.1";
+  version = "1.5.1";
 
   src = fetchFromGitHub {
     owner = "ChausseBenjamin";
     repo = "termpicker";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-KLoI2NfolWdi4IXTa4s+n4eDLVtsmp8s1H8hSJqZvmw=";
+    hash = "sha256-V1ZwkvlMLTNjk6hdnpByS/7zR7U7kChuKMVP0H+BJD8=";
   };
 
   vendorHash = "sha256-M5YZaJdv9D8NkwD+T8tAtGH5P4IKcgjqpUoKVfLo+C0=";
