@@ -1,6 +1,8 @@
 {
   lib,
   fetchFromGitHub,
+  nix-update-script,
+  versionCheckHook,
   hyprlandPlugins,
 }:
 hyprlandPlugins.mkHyprlandPlugin (finalAttrs: {
@@ -14,6 +16,8 @@ hyprlandPlugins.mkHyprlandPlugin (finalAttrs: {
     hash = "sha256-IcF2TfXxxMmHgVAhHdH87jUAl5fWYbtmstUT0kkJ2Dc=";
   };
 
+  nativeBuildInputs = [versionCheckHook];
+
   installPhase = ''
     runHook preInstall
 
@@ -21,6 +25,8 @@ hyprlandPlugins.mkHyprlandPlugin (finalAttrs: {
 
     runHook postInstall
   '';
+
+  passthru.updateScript = nix-update-script {extraArgs = ["--flake"];};
 
   meta = {
     description = "A plugin that adds a desktop selection box to Hyprland";
