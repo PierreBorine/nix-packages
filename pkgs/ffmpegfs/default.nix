@@ -2,6 +2,8 @@
   stdenv,
   lib,
   fetchFromGitHub,
+  nix-update-script,
+  versionCheckHook,
   autoconf,
   automake,
   fuse3,
@@ -31,6 +33,7 @@ stdenv.mkDerivation (finalAttrs: {
   };
 
   nativeBuildInputs = [
+    versionCheckHook
     autoconf
     automake
     pkg-config
@@ -56,6 +59,8 @@ stdenv.mkDerivation (finalAttrs: {
   postPatch = ''
     ./autogen.sh
   '';
+
+  passthru.updateScript = nix-update-script {extraArgs = ["--flake"];};
 
   meta = {
     description = "FUSE-based transcoding filesystem with video support from many formats to FLAC, MP4, TS, WebM, OGG, MP3, HLS, and others";
