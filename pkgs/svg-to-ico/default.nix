@@ -3,6 +3,7 @@
   rustPlatform,
   fetchFromGitHub,
   nix-update-script,
+  versionCheckHook,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "svg-to-ico";
@@ -18,7 +19,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   cargoHash = "sha256-zNHpEyISPn3SGBK0LFmkfYgnzziiXG5D+gKRHHdKwCI=";
 
-  passthru.updateScript = nix-update-script {};
+  nativeBuildInputs = [versionCheckHook];
+
+  passthru.updateScript = nix-update-script {extraArgs = ["--flake"];};
 
   meta = {
     description = "A utility and Rust library to convert SVG icons into Windows ICO files";
