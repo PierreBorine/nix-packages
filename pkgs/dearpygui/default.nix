@@ -17,14 +17,14 @@
 }:
 buildPythonPackage (finalAttrs: {
   pname = "dearpygui";
-  version = "2.0.0";
+  version = "2.3.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "hoffstadt";
     repo = "DearPyGui";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-YkLco717xgNwzje53/xa/p1EJI3YO9E54Xkee8OXU2w=";
+    hash = "sha256-R0YndwH8jqfaw6ABYSX8ZLy1DNLPAC4/Ti2iBt/SycM=";
     fetchSubmodules = true;
   };
 
