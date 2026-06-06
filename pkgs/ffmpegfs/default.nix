@@ -46,7 +46,7 @@ stdenv.mkDerivation (finalAttrs: {
     sqlite
     libcue
     libchardet
-    # Not Requierd for building
+    # Not Required for building
     libdvdread
     libbluray
     chromaprint
