@@ -1,6 +1,8 @@
 {
   lib,
   fetchFromGitHub,
+  nix-update-script,
+  versionCheckHook,
   rustPlatform,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
@@ -15,6 +17,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
   };
 
   cargoHash = "sha256-qjzTOtUsPi44un8Vv/pUkm+bBGDey59vTgKYQM7mTcg=";
+
+  nativeBuildInputs = [versionCheckHook];
+
+  passthru.updateScript = nix-update-script {extraArgs = ["--flake"];};
 
   meta = {
     description = "Terminal based binary number guessing game";
