@@ -2,6 +2,7 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
+  nix-update-script,
   setuptools,
   libevdev,
   evdev,
@@ -23,6 +24,8 @@ buildPythonPackage rec {
   buildInputs = [libevdev evdev];
 
   pythonImportsCheck = ["vgamepad"];
+
+  passthru.updateScript = nix-update-script {extraArgs = ["--flake"];};
 
   meta = {
     description = "Virtual XBox360 and DualShock4 gamepads in python";
