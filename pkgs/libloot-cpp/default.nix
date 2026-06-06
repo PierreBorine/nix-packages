@@ -6,7 +6,7 @@
   cmake,
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
-  pname = "libloot";
+  pname = "libloot-cpp";
   version = "0.29.5";
   __structuredAttrs = true;
   enableParallelBuilding = true;
