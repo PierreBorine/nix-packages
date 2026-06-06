@@ -1,7 +1,7 @@
 {
   lib,
   buildPythonPackage,
-  fetchPypi,
+  fetchFromGitHub,
   setuptools,
   libevdev,
   evdev,
@@ -11,19 +11,16 @@ buildPythonPackage rec {
   version = "0.1.0";
   pyproject = true;
 
-  src = fetchPypi {
-    inherit pname version;
-    hash = "sha256-V/a9Aa7AwXKUdRf7eC0VDvmyhff01STDFzdPpcJKid4=";
+  src = fetchFromGitHub {
+    owner = "yannbouteiller";
+    repo = "vgamepad";
+    rev = "v${version}";
+    hash = "sha256-3nCErxmY66ApfF1aPmTnOGOYv8QHMcnOBvVx0+FcID4=";
   };
 
   build-system = [setuptools];
 
-  buildInputs = [
-    libevdev
-    evdev
-  ];
-
-  doCheck = false;
+  buildInputs = [libevdev evdev];
 
   pythonImportsCheck = ["vgamepad"];
 
