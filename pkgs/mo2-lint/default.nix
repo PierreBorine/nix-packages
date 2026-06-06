@@ -114,18 +114,15 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       hash = "sha256-AcMtBzdDIkCtzwu8HTIyfwl206HhQnd0vI/ryPHAMRE=";
     };
 
-    # HACK: makes it easily overridable
-    windows-python-deps-hash = "sha256-Dom5zV51dMTFqbtVXtF4Rkr9z8k8ZRq7Zu51V2YQcWY=";
     windows-python-deps = stdenvNoCC.mkDerivation {
       name = "mo2-win-pip-wheels";
 
       outputHashMode = "recursive";
       outputHashAlgo = "sha256";
-      outputHash = finalAttrs.passthru.windows-python-deps-hash;
+      outputHash = "sha256-+eWwyjSzkpr8V/c4M0K/PZjsXt6TUDBlphkrz+umBLg=";
 
       nativeBuildInputs = [python pip];
 
-      # HACK: this is really bad
       buildCommand = ''
         mkdir -p $out
         export PIP_CACHE_DIR=$TMPDIR/pip-cache
@@ -135,7 +132,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
           --python-version 3.13 \
           --only-binary=:all: \
           --dest $out \
-          pyinstaller loguru pyyaml pip pefile pywin32-ctypes colorama win32-setctime
+          --requirement ${./requirements.txt}
       '';
     };
 
