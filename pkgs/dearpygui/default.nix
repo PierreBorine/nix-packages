@@ -50,7 +50,6 @@ buildPythonPackage (finalAttrs: {
   ];
 
   propagatedBuildInputs = [pillow];
-  doCheck = false;
 
   pythonImportsCheck = [
     "dearpygui"
