@@ -59,7 +59,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     runHook postInstall
   '';
 
-  passthru.updateScript = nix-update-script {};
+  passthru.updateScript = nix-update-script {extraArgs = ["--flake"];};
 
   meta = {
     description = "A library for accessing LOOT's metadata and sorting functionality";
