@@ -105,7 +105,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       --replace-fail '$HOME/.local/share/mo2-lint/nxm-handler' "$out/bin/nxm-handler"
 
     wrapProgram $out/bin/mo2-lint \
-      --set PATH ${lib.makeBinPath [winetricks protontricks killall]}
+      --prefix PATH : ${lib.makeBinPath [winetricks protontricks killall]}
 
     runHook postInstall
   '';
