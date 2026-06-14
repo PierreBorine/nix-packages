@@ -36,7 +36,7 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "mo2-lint";
-  version = "7.0.0-rc3";
+  version = "7.0.0-rc5";
   __structuredAttrs = true;
   strictDeps = true;
 
@@ -44,7 +44,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     owner = "Furglitch";
     repo = "modorganizer2-linux-installer";
     tag = finalAttrs.version;
-    hash = "sha256-XZgI09b1h9U6znn6HC1kO5Hru9dVbZWOxlnwOCmih0k=";
+    hash = "sha256-9sWaKHyXwZUPLk865QHVnowM8H15H4NkXzuo/jH7lkg=";
   };
 
   nativeBuildInputs = [
