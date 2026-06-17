@@ -1,20 +1,23 @@
 {
   lib,
   stdenvNoCC,
-  bash,
-  makeWrapper,
+  python3,
 }:
 stdenvNoCC.mkDerivation {
   name = "header-gen";
+
   src = ./header-gen;
-  buildInputs = [bash];
-  nativeBuildInputs = [makeWrapper];
+
   phases = ["installPhase"];
   installPhase = ''
-    mkdir -p $out/bin
-    cp $src $out/bin/header-gen
-    chmod +x $out/bin/header-gen
-    wrapProgram $out/bin/header-gen \
-      --prefix PATH : ${lib.makeBinPath [bash]}
+    install -Dm755 $src $out/bin/header-gen
+    substituteInPlace $out/bin/header-gen \
+      --replace-fail "#!/usr/bin/env python3" "#!${lib.getExe python3}"
   '';
+
+  meta = {
+    description = "A very simple two-lines header generator";
+    homepage = "https://codeberg.org/PierreBorine/nix-packages";
+    license = lib.licenses.mit;
+  };
 }
