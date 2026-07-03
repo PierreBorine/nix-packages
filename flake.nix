@@ -29,15 +29,9 @@
       {pkgs, ...}: import ./pkgs pkgs
     );
 
-    legacyPackages = forAllSystems (
-      {pkgs, ...}: import ./builders pkgs
-    );
-
     nixosModules = import ./pkgs/nixos.nix self;
 
-    overlays.default = _: fpkgs:
-      import ./pkgs fpkgs
-      // import ./builders fpkgs;
+    overlays.default = _: fpkgs: import ./pkgs fpkgs;
 
     apps = forAllSystems (
       {
