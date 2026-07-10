@@ -126,7 +126,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
       outputHashMode = "recursive";
       outputHashAlgo = "sha256";
-      outputHash = "sha256-a8xkPSbhtlRpiIKwP13T2Sxt2frhwGWF/iMkynltOaE=";
+      outputHash = "sha256-fJqmI6wtyUvxNFX+uUQC97472k09wXj45MWZsXiUCKc=";
 
       nativeBuildInputs = [python pip];
 
