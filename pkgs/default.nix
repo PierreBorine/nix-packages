@@ -18,6 +18,7 @@ pkgs: let
     h2mm-cli = callPackage ./h2mm-cli {};
     hd2arsenal = callPackage ./hd2arsenal {};
     header-gen = callPackage ./header-gen {};
+    hushmic = callPackage ./hushmic {};
     hyprselect = callPackage ./hyprselect {};
     libloot-cpp = callPackage ./libloot-cpp {};
     loot = callPackage ./loot {inherit (final) libloot-cpp svg-to-ico;};
