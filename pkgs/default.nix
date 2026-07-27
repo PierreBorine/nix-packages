@@ -24,6 +24,7 @@ pkgs: let
     loot = callPackage ./loot {inherit (final) libloot-cpp svg-to-ico;};
     lutebot = callPackage ./lutebot {};
     mo2-lint = python3Packages.callPackage ./mo2-lint {};
+    picker = callPackage ./picker {};
     slsk-batchdl = callPackage ./slsk-batchdl {};
     spotify-to-tidal = python3Packages.callPackage ./spotify-to-tidal {};
     svg-to-ico = callPackage ./svg-to-ico {};
