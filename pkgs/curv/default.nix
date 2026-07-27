@@ -10,14 +10,14 @@
 }:
 buildPythonApplication (finalAttrs: {
   pname = "curv";
-  version = "0-unstable-2026-05-11";
+  version = "0-unstable-2026-06-11";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "programmersd21";
     repo = "curv";
-    rev = "04a49ba27d7a4eb4c7a31e1a6b6c4a6e2babee13";
-    hash = "sha256-/KR5Zxwve/UKvEVQF/FjVdpUC2aYW4YljuQ53uMtC50=";
+    rev = "4dd0dfbc583a250475f374c8d3b98864908e8bf2";
+    hash = "sha256-zrZlehBGMB/4NMsJsMBWgb56RO0B1tngoz0I4FhfaRM=";
   };
 
   build-system = [hatchling];
