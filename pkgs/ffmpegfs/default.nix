@@ -23,13 +23,13 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "ffmpegfs";
-  version = "2.18";
+  version = "2.50";
 
   src = fetchFromGitHub {
     owner = "nschlia";
     repo = "ffmpegfs";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-kYMUnX7WcPvhkR6BB58SntedlU6PtRb6RcLSOVhJeKg=";
+    hash = "sha256-6oFuh1S0lKJ5WfOl4K1i2Chke6t51xDcvx7sw/WP84Y=";
   };
 
   nativeBuildInputs = [
