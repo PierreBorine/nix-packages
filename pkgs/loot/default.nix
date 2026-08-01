@@ -47,14 +47,14 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   cmakeFlags = [
-    "-DCMAKE_BUILD_TYPE=Release"
-    "-DBoost_USE_STATIC_LIBS=OFF"
-    "-DGIT_COMMIT_STRING=${finalAttrs.src.rev}"
+    (lib.cmakeFeature "CMAKE_BUILD_TYPE" "Release")
+    (lib.cmakeBool "Boost_USE_STATIC_LIBS" false)
+    (lib.cmakeFeature "GIT_COMMIT_STRING" finalAttrs.src.rev)
 
-    "-DFETCHCONTENT_SOURCE_DIR_MINIZIP=${finalAttrs.passthru.minizip-src}"
-    "-DFETCHCONTENT_SOURCE_DIR_VALVEFILEVDF=${finalAttrs.passthru.ValveFileVDF-src}"
+    (lib.cmakeFeature "FETCHCONTENT_SOURCE_DIR_MINIZIP" "${finalAttrs.passthru.minizip-src}")
+    (lib.cmakeFeature "FETCHCONTENT_SOURCE_DIR_VALVEFILEVDF" "${finalAttrs.passthru.ValveFileVDF-src}")
 
-    "-DLOOT_BUILD_TESTS=OFF"
+    (lib.cmakeBool "LOOT_BUILD_TESTS" finalAttrs.finalPackage.doCheck)
   ];
 
   nativeBuildInputs = [
