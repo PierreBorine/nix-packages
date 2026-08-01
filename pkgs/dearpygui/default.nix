@@ -36,6 +36,8 @@ buildPythonPackage (finalAttrs: {
 
   preBuild = ''
     export MAKEFLAGS="''${MAKEFLAGS:+''${MAKEFLAGS} }-j$NIX_BUILD_CORES"
+    substituteInPlace setup.py \
+      --replace-fail 'wip_version = "2.3"' 'wip_version = "2.3.1"'
   '';
 
   buildInputs = [
