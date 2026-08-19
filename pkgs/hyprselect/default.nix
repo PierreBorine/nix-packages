@@ -7,13 +7,13 @@
 }:
 hyprlandPlugins.mkHyprlandPlugin (finalAttrs: {
   pluginName = "hyprselect";
-  version = "0.56.0-@1";
+  version = "0.56.1-@1";
 
   src = fetchFromGitHub {
     owner = "jmanc3";
     repo = "hyprselect";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-ssvPEIXapSuRV+23hdBInj+HG2FwhQenMw+Bdh3cvzY=";
+    hash = "sha256-6YMUG77UCkWDDgQSXIBa8dVU6PCRZaPW5l1KYL2vtc8=";
   };
 
   nativeBuildInputs = [versionCheckHook];
