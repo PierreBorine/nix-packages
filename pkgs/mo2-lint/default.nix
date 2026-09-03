@@ -169,5 +169,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     license = lib.licenses.gpl3Plus;
     mainProgram = "mo2-lint";
     platforms = ["x86_64-linux"];
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

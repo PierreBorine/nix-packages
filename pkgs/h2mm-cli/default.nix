@@ -49,5 +49,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     homepage = "https://github.com/v4n00/h2mm-cli";
     mainProgram = "h2mm";
     platforms = lib.platforms.linux;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

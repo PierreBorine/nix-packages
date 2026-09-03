@@ -70,5 +70,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
     homepage = "https://github.com/not-jan/apex-tux";
     license = lib.licenses.unlicense;
     mainProgram = "apex-tux";
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

@@ -71,5 +71,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     license = lib.licenses.gpl3Only;
     mainProgram = "barotrauma-modding-tool";
     platforms = lib.platforms.all;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

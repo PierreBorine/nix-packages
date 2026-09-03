@@ -33,5 +33,6 @@ hyprlandPlugins.mkHyprlandPlugin (finalAttrs: {
     homepage = "https://github.com/jmanc3/hyprselect";
     license = lib.licenses.unlicense;
     platforms = lib.platforms.linux;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

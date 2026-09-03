@@ -27,5 +27,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
     homepage = "https://github.com/epic-64/binbreak";
     license = lib.licenses.mit;
     mainProgram = "binbreak";
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

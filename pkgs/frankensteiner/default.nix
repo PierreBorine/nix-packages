@@ -1,4 +1,5 @@
 {
+  lib,
   writeShellScript,
   stdenvNoCC,
   fetchurl,
@@ -50,4 +51,8 @@ in
 
       runHook postInstall
     '';
+
+    meta = {
+      maintainers = [lib.maintainers.pierreborine];
+    };
   }

@@ -63,5 +63,6 @@ in
       license = with lib.licenses; [mit asl20];
       mainProgram = "hushmic";
       platforms = ["x86_64-linux"];
+      maintainers = [lib.maintainers.pierreborine];
     };
   }

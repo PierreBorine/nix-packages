@@ -33,5 +33,6 @@ buildGoModule (finalAttrs: {
     homepage = "https://github.com/ChausseBenjamin/termpicker";
     license = lib.licenses.beerware;
     mainProgram = "termpicker";
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

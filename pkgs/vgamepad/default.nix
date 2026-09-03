@@ -32,7 +32,7 @@ buildPythonPackage (finalAttrs: {
     homepage = "https://github.com/yannbouteiller/vgamepad";
     changelog = "https://github.com/gvalkov/python-evdev/blob/v${finalAttrs.version}/docs/changelog.rst";
     license = lib.licenses.mit;
-    maintainers = [];
     platforms = lib.platforms.linux;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

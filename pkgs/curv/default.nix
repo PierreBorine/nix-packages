@@ -40,5 +40,6 @@ buildPythonApplication (finalAttrs: {
     changelog = "https://github.com/programmersd21/curv/blob/${finalAttrs.src.rev}/CHANGELOG.md";
     license = lib.licenses.mit;
     mainProgram = "curv";
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

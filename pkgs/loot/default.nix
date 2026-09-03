@@ -113,5 +113,6 @@ stdenv.mkDerivation (finalAttrs: {
     license = lib.licenses.gpl3Only;
     mainProgram = "LOOT";
     platforms = lib.platforms.all;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

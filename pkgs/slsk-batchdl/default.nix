@@ -33,10 +33,11 @@ buildDotnetModule (finalAttrs: {
 
   doCheck = false;
 
-  meta = with lib; {
+  meta = {
     description = "A batch downloader for Soulseek";
     homepage = "https://github.com/fiso64/slsk-batchdl";
-    platforms = platforms.linux;
+    platforms = lib.platforms.linux;
     mainProgram = "slsk-batchdl";
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

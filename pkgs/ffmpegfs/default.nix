@@ -69,5 +69,6 @@ stdenv.mkDerivation (finalAttrs: {
     license = with lib.licenses; [gpl3Only cc0];
     mainProgram = "ffmpegfs";
     platforms = lib.platforms.unix;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

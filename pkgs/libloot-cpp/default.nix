@@ -66,5 +66,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
     homepage = "https://github.com/loot/libloot";
     changelog = "https://github.com/loot/libloot/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.gpl3Only;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

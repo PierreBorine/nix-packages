@@ -50,5 +50,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     homepage = "https://github.com/Dimencia/LuteBot3";
     sourceProvenance = [lib.sourceTypes.binaryBytecode];
     license = lib.licenses.mit;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

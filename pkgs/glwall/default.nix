@@ -37,5 +37,6 @@ stdenv.mkDerivation {
     homepage = "https://github.com/ikz87/GLWall";
     platforms = lib.platforms.linux;
     mainProgram = "GLWall";
+    maintainers = [lib.maintainers.pierreborine];
   };
 }

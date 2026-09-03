@@ -35,5 +35,8 @@ stdenvNoCC.mkDerivation {
       --prefix PATH : ${lib.makeBinPath [ffmpegthumbnailer quickshell]}
   '';
 
-  meta.mainProgram = "picker";
+  meta = {
+    mainProgram = "picker";
+    maintainers = [lib.maintainers.pierreborine];
+  };
 }

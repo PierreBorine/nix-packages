@@ -29,5 +29,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
     changelog = "https://github.com/Ortham/svg_to_ico/blob/${finalAttrs.src.rev}/CHANGELOG.md";
     license = lib.licenses.mit;
     mainProgram = "svg_to_ico";
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

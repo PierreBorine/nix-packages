@@ -33,5 +33,6 @@ buildDotnetModule (finalAttrs: {
     license = lib.licenses.unfree;
     mainProgram = "barotrauma-save-decompressor";
     platforms = lib.platforms.all;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

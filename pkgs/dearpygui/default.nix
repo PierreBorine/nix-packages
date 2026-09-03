@@ -62,5 +62,6 @@ buildPythonPackage (finalAttrs: {
     description = "Dear PyGui: A fast and powerful Graphical User Interface Toolkit for Python with minimal dependencies";
     homepage = "https://github.com/hoffstadt/DearPyGui";
     license = lib.licenses.mit;
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

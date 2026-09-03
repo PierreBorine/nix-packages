@@ -19,5 +19,6 @@ stdenvNoCC.mkDerivation {
     description = "A very simple two-lines header generator";
     homepage = "https://codeberg.org/PierreBorine/nix-packages";
     license = lib.licenses.mit;
+    maintainers = [lib.maintainers.pierreborine];
   };
 }

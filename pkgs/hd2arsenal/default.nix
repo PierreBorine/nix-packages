@@ -35,9 +35,10 @@ in
       description = "Mod manager for Helldivers 2 that makes modding accessible and fun";
       homepage = "https://www.nexusmods.com/helldivers2/mods/4664";
       downloadPage = "https://www.nexusmods.com/helldivers2/mods/4664?tab=files";
-      sourceProvenance = with lib.sourceTypes; [binaryBytecode];
+      sourceProvenance = [lib.sourceTypes.binaryBytecode];
       platforms = lib.platforms.linux;
       license = lib.licenses.unfree;
       mainProgram = "hd2arsenal";
+      maintainers = [lib.maintainers.pierreborine];
     };
   }

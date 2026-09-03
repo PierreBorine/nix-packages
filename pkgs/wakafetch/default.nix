@@ -21,5 +21,6 @@ buildGoModule (finalAttrs: {
     homepage = "https://github.com/sahaj-b/wakafetch";
     license = lib.licenses.mit;
     mainProgram = "wakafetch";
+    maintainers = [lib.maintainers.pierreborine];
   };
 })

@@ -25,9 +25,10 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
-  meta = with lib; {
+  meta = {
     homepage = "https://www.cdnfonts.com/asciid.font";
-    license = licenses.ofl;
-    platforms = platforms.all;
+    license = lib.licenses.ofl;
+    platforms = lib.platforms.all;
+    maintainers = [lib.maintainers.pierreborine];
   };
 }

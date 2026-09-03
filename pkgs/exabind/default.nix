@@ -40,5 +40,6 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/junkdog/exabind";
     license = lib.licenses.mit;
     mainProgram = "exabind";
+    maintainers = [lib.maintainers.pierreborine];
   };
 }
