@@ -16,7 +16,7 @@
     sha256 = "6139728c6e19d45f542814f5d3acf243d9947422f1887c6d2f04f380ceada31a";
   };
 
-  appimageContents = appimageTools.extractType1 {inherit pname version src;};
+  appimageContents = appimageTools.extract {inherit pname version src;};
 in
   appimageTools.wrapType2 {
     inherit pname version src;
