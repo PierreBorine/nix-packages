@@ -20,6 +20,7 @@
                 builtins.elem (nixpkgs.lib.getName pkg) [
                   "barotrauma-save-decompressor"
                   "hd2arsenal"
+                  "HD2Arsenal"
                 ];
             };
           };
