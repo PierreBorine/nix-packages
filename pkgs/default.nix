@@ -11,6 +11,7 @@ pkgs: let
     binbreak = callPackage ./binbreak {};
     curv = python3Packages.callPackage ./curv {};
     dearpygui = python3Packages.callPackage ./dearpygui {};
+    dmodman = callPackage ./dmodman {};
     exabind = callPackage ./exabind {};
     ffmpegfs = callPackage ./ffmpegfs {};
     frankensteiner = callPackage ./frankensteiner {};
